@@ -1,5 +1,6 @@
 {:min-bb-version "0.8.156"
  :paths ["src/clj"
+         "build"
          "resources"]
  :deps  {failjure/failjure           {:mvn/version "2.2.0"}
          org.clojure/tools.namespace {:mvn/version "1.4.4"}}
@@ -21,9 +22,13 @@
                   :task (shell "npx esbuild js/index.js --bundle --minify --outfile=build/js/index.min.js")}
 
          scss {:doc  "CSS"
-               :task (shell "sass --watch scss:build/css")}
+               :task (shell "sass --watch scss:resources/dev")}
+
+         prod:scss {:doc  "CSS"
+                    :task (shell "sass -s compressed scss:build/css")}
 
          go {:task (do
+                     (shell "bb prod:scss")
                      (shell "bb sver")
                      (shell "bb deploy")
                      (shell "bb prod:restart"))}

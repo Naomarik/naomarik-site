@@ -23,7 +23,8 @@
   (let [{:keys [nav req page-desc title]} opts
         title (or title "@Naomarik")
         page-desc (or page-desc "@Naomarik's Portfolio Site")
-        boosted? (= "true" (get-in req [:headers "hx-boosted"]))]
+        boosted? (= "true" (get-in req [:headers "hx-boosted"]))
+        build @env/mode]
     (str
      "<!doctype html>"
      (hic/html
@@ -43,13 +44,14 @@
                     :content "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"}]
             [:title title]]
            (cond-> (not boosted?)
-             (into [[:style (hic/raw css)]
-                    [:link {:href favicon :rel "icon" :type "image/x-icon"}]
-                    [:link {:href (str "/css/fonts.css")
-                            :rel "stylesheet"
-                            :media "print"
-                            :onload "this.rel='stylesheet'"
-                            :type "text/css"}]])))
+             (into (-> [[:link {:href favicon :rel "icon" :type "image/x-icon"}]
+                        [:link {:href (str "/css/fonts.css")
+                                :rel "stylesheet"
+                                :media "print"
+                                :onload "this.rel='stylesheet'"
+                                :type "text/css"}]]
+                       (cond-> (= build :prod)
+                         (conj [:style (hic/raw css)]))))))
        [:body
         {:hx-boost "true"
          :hx-push-url "true"}
@@ -57,7 +59,12 @@
         [:div#page
          page]]
        (when-not boosted? [:script {:src "/js/index.min.js"}])
-       (when (= @env/mode :dev)
+       (when (= build :dev)
+         [:link {:href (str "/dev-css/style.css")
+                 :rel "stylesheet"
+                 :type "text/css"}])
+
+       (when (= build :dev)
          [:script {:src "https://livejs.com/live.js"}])]))))
 
 (defn img-with-caption [{:keys [src caption height width]}]

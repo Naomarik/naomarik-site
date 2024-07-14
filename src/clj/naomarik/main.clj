@@ -72,13 +72,17 @@
        :headers {"Content-Type" "text/css"}
        :status 200}
 
+      [:get "/dev-css" id] ;; TODO dev only
+      {:body (io/file (io/resource (str "dev/" id)))
+       :headers {"Content-Type" "text/css"}
+       :status 200}
+
       {:body (str "page " uri " not found")
        :status 404})))
 
 (defn- read-config []
   (if (.exists (io/file "config.edn"))
     (edn/read-string (slurp "config.edn"))
-
     {:port 3001}))
 
 (defn run [mode]
@@ -98,6 +102,7 @@
 (comment
   ;; restart server
   (run :dev)
+  (run :prod)
   (do
     (when-let [instance @server] (instance))
     #_(reset! server nil)))
