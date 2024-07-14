@@ -1,0 +1,22 @@
+.DS_Store
+.nrepl-port
+.cpcache/
+node_modules/
+
+# IntelliJ
+*.iml
+.idea/
+
+# clj-kondo
+.clj-kondo/.cache/
+.calva/output-window/
+.lsp/.cache/
+db.transit.json
+
+.clj-kondo
+css/
+build/
+notes.org
+TODO.org
+config.edn
+ver

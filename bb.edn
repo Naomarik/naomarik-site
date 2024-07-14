@@ -1,0 +1,33 @@
+{:min-bb-version "0.8.156"
+ :paths ["src/clj"
+         "resources"]
+ :deps  {failjure/failjure           {:mvn/version "2.2.0"}
+         org.clojure/tools.namespace {:mvn/version "1.4.4"}}
+ :tasks {:requires ([babashka.tasks :refer [shell]])
+         :init (def config (read-string (slurp "config.edn")))
+
+         sver {:task (do
+                       (spit "ver" (:out (shell {:out :string} "git rev-parse --short HEAD"))))}
+
+         deploy {:task (shell (:sync config))}
+
+         prod:restart {:task (shell (:prod-restart config))}
+
+         server {:requires ([naomarik.main :as main])
+                 :task (do (main/-main)
+                           (deref (promise)))}
+
+         esbuild {:doc "Build js"
+                  :task (shell "npx esbuild js/index.js --bundle --minify --outfile=build/js/index.min.js")}
+
+         scss {:doc  "CSS"
+               :task (shell "sass --watch scss:build/css")}
+
+         go {:task (do
+                     (shell "bb sver")
+                     (shell "bb deploy")
+                     (shell "bb prod:restart"))}
+
+         tmux {:task (do
+                       (shell "tmux new-session -d" "bb scss")
+                       (shell "tmux -2 attach-session -d"))}}}

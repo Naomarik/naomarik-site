@@ -1,0 +1,7 @@
+{"dependencies": {
+    "htmx.org": "^2.0.0"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.28.10"
+  }
+}
