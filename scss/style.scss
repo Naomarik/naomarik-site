@@ -86,6 +86,11 @@ nav {
 }
 
 #verbiage {
+  .entries {
+    display: grid;
+    gap: 18px;
+  }
+
   .entry {
     .date {
       margin-right: 12px;
@@ -121,12 +126,23 @@ nav {
   }
 }
 
+.center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 figure {
   padding: 5px;
   margin: 0 auto;
-  display: block;
+  display: inline-block;
   vertical-align: top;
   max-width: calc(100% - 10px);
+
+  a {
+    line-height: 0;
+    display: block;
+  }
 
   iframe {
     max-width: 100%;
@@ -135,9 +151,11 @@ figure {
   figcaption {
     padding: 10px;
     text-align: center;
+    line-height: 1.5;
+    background: var(--bg-accent);
     font-size: 12px;
-    font-weight: 500;
     color: var(--fg-alt);
+    font-style: italic;
   }
 
   img {

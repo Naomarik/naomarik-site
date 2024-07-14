@@ -43,29 +43,31 @@
          [:script {:src "https://livejs.com/live.js"}])]))))
 
 (defn img-with-caption [{:keys [src caption height width]}]
-  [:figure
-   {:style (cond-> {}
-             height
-             (assoc :height (str height "px"))
-             width
-             (assoc :width (str width "px"))
-             )}
-   [:a {:href src
-        :target "_blank"}
-    [:img {:src src}]]
-   [:figcaption caption]])
+  [:div.center
+   [:figure
+    {:style (cond-> {}
+              height
+              (assoc :height (str height "px"))
+              width
+              (assoc :width (str width "px")))}
+    [:a {:href src
+         :target "_blank"}
+     [:img {:src src}]]
+    [:figcaption caption]]])
+
 
 (defn youtube-embed [url caption]
-  [:figure
-   [:iframe {:width "560",
-             :height "315"
-             :src url,
-             :title "YouTube video player"
-             :frameborder "0",
-             :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-             :referrerpolicy "strict-origin-when-cross-origin",
-             :allowfullscreen true}]
-   [:figcaption caption]])
+  [:div.center
+   [:figure
+    [:iframe {:width "560",
+              :height "315"
+              :src url,
+              :title "YouTube video player"
+              :frameborder "0",
+              :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+              :referrerpolicy "strict-origin-when-cross-origin",
+              :allowfullscreen true}]
+    [:figcaption caption]]])
 
 (defn aboot []
   (render
@@ -95,12 +97,25 @@ It's using HTMX powered with http-kit and babashka, served behind nginx and Clou
    {:nav :aboot}))
 
 (def writing
-  [{:title "Bank Project"
+  [{:title "DDD: Data Driven Development"
     :date "June 14, 2024"
+    :slug "ddd"
     :draft true
     :content
     [:div.content
-     [:p "Draft"]]}
+     [:p "When I have a problem to solve, I take all the necessary bits of information and the relationship between them and
+model them with vectors, maps, and sets. I attempt to do this in a way that looks aesthetically pleasing and is
+as small as possible. I typically write out some dummy data exploring what a real scenario would look like.
+I then think about the kind of 'consumption' the data structure needs in order to be used
+and might end up writing a 'compiled' version that is denormalized but extremely performant."]]}
+
+   {:title "Bank Project"
+    :date "June 14, 2024"
+    :slug "twitter-banking"
+    :draft true
+    :content
+    [:div.content
+     [:p "this is"]]}
 
    {:slug "why-clojure"
     :title "Clojure for the past 9 years and forseeable future"
@@ -159,7 +174,9 @@ It's using HTMX powered with http-kit and babashka, served behind nginx and Clou
                    {:href (str "/verbiage/" slug)}
                    [:span.title title]
                    #_content]])
-               (filter #(not (:draft %)) writing)))]
+               (if (= @env/mode :prod)
+                 (filter #(not (:draft %)) writing)
+                 writing)))]
    {:nav :verbiage}))
 
 (def ^:private *hits (atom 0))
@@ -217,7 +234,7 @@ It's using HTMX powered with http-kit and babashka, served behind nginx and Clou
            [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]
 
            (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")
-
+           [:br]
            (img-with-caption
             {:src "/img/projects/sayartii/analytics.png"
              :caption "Analytics each user gets. Notice the jump when ad is featured (F)"
