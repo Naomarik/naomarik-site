@@ -258,7 +258,7 @@ and might end up writing a 'compiled' version that is denormalized but extremely
     :tags ["Clojure" "Postgres"]
     :desc "Live Chat SaaS with kanban dashboard."
     :page [:div#booma
-           [:p "First clojure project, this project nearly made my cofounder and I millionaires. It was used by Dubai Statistics's site for several months before running out of money and shutting down."]
+           [:p "First clojure project nearly making my cofounder and I both young millionaires. (Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's site for several months before running out of money and shutting down."]
            (img-with-caption
             {:src "/img/projects/booma/kanban.png"
              :caption "Kanban backend"

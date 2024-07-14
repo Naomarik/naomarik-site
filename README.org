@@ -1,8 +1,8 @@
-#+title: Readme
+#+title: naomarik.com
 
 
-* Personal site powering naomarik.com
-** Dev Dependencies
+* Dependencies
+** Dev
 babashka, esbuild, sass
-** Prod Dependencies
+** Prod
 babashka

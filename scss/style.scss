@@ -145,6 +145,8 @@ figure {
   }
 
   iframe {
+    display: block;
+    line-height: 0;
     max-width: 100%;
   }
 
