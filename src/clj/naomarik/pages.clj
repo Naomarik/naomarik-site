@@ -41,7 +41,11 @@
             [:meta {:property "og:title" :content title}]
             [:meta {:property "og:description" :content page-desc}]
             [:meta {:name "viewport"
-                    :content "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"}]
+                    :content "width=device-width, initial-scale=1, maximum-scale=3, viewport-fit=cover"}]
+            (when (= build :dev)
+              [:link {:href (str "/dev-css/style.css")
+                      :rel "stylesheet"
+                      :type "text/css"}])
             [:title title]]
            (cond-> (not boosted?)
              (into (-> [[:link {:href favicon :rel "icon" :type "image/x-icon"}]
@@ -59,10 +63,7 @@
         [:div#page
          page]]
        (when-not boosted? [:script {:src "/js/index.min.js"}])
-       (when (= build :dev)
-         [:link {:href (str "/dev-css/style.css")
-                 :rel "stylesheet"
-                 :type "text/css"}])
+
 
        (when (= build :dev)
          [:script {:src "https://livejs.com/live.js"}])]))))
@@ -77,7 +78,8 @@
               (assoc :width (str width "px")))}
     [:a {:href src
          :target "_blank"}
-     [:img {:src src}]]
+     [:img {:src src
+            :alt caption}]]
     [:figcaption caption]]])
 
 (defn youtube-embed [url caption]
@@ -141,6 +143,54 @@ and might end up writing a 'compiled' version that is denormalized but extremely
     :content
     [:div.content
      [:p "this is"]]}
+
+   {:slug "new-site"
+    :title "My new custom portfolio blog scores a perfect 100 on Lighthouse"
+    :date "June 15, 2024"
+    :content
+    [:div.content
+     [:p "I've been meaning to make a portfolio site forever. Upon embarking on any project, I always scan the landscape to see what people are using.
+Hugo and Jekyll are the two most well known. In the clojure space there is Cryogen, Clerk, and borkdude's quickblog."]
+
+     [:p "I was horrified to see people recommending a new one called Astro which claims it's a frontend agnostic hydra with SSG capabilities. It's probably cool
+and everything but I have no idea what purpose it serves to be able to swap out frontend frameworks like react and svelte instead of just choosing one.
+I don't know how anyone is supposed to learn to be proficient
+in anything when new frameworks and build tools come out at breakneck speed,
+with changes breaking APIs and its users' sanity as they inevitably evolve."]
+
+     [:p "Anyway, after my horror died down, I started talking to "
+      [:a {:href "https://yogthos.net/"
+           :targe "_blank"} "yogthos"]
+      " about my intent to make a portfolio site and he showed me you can make a babashka script that launches an http-kit server using hiccup and htmx in a single file.
+He just pasted it to me in a DM. I was pretty blown away, reminded me of the days I could just FTP things with PHP."]
+
+     [:p "I benchmarked what he sent me and it was spitting out hiccup generated HTML at 70k/rps. This is intepreted clojure with instant startup. For context, rails tested several months ago
+on the same laptop does about 100 requests per second for a small JSON response."]
+
+     [:p "None of the existing blogging solutions really appealed to me. Not because they're bad, but I'm lazy and don't want to learn anything especially when it's going to be more verbose than clojure. I also
+have some ideas in the future to grow this site to do more complex things than a static site can do. So I ended up turning that code Dmitri pasted to me into what this is today."]
+     [:p "The lighthouse score was a bit of a surprise to me. It started off not being so perfect but was still very high."]
+     (img-with-caption
+      {:src "/img/verbiage/june-2024/lighthouse.jpg"
+       :caption "Never seen this before, perfect lighthouse score"
+       :width 370})
+
+     [:p "This is my first time using HTMX and I'm using boosted URLs on every link, which just makes an ajax request and swaps out the html instead of doing a full page load."]
+     [:p "I figured HTMX would send something announcing itself in its ajax requests and I was right, finding " [:code "hx-boosted"] " being included in the headers."]
+     [:p "So I inlined all the site's CSS excluding font imports for the first page request and any boosted requests would not serve any JS or CSS."]
+
+     [:p "I'm used to a compile + deployment time of about a minute on my current projects for both backend and frontend. All I have to do with this is type " [:code "bb go"] "
+where it'll build the css, rsync the project, restarts the process and it's all done under a few seconds."]
+     [:p "Despite the score, this site still feels significantly slower than the SPAs I made previously because every page is being loaded on demand. Initial page load is much faster
+but 150ms latency is very perceptible."]
+     (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Sayartii is extremely faster after the ~1 sec first load")
+     [:p "I could have with just as little effort made this site a snappy SPA but decided against it for optimal search engine compatibility.
+Both have their tradeoffs and merits, but SPAs exist for a good reason and provide the optimal experience if done right."]
+     [:p "To see everything this site is doing, you can find the source in the "
+      [:a {:href "/aboot"} "Aboot"] " page"]
+     [:p "So far largest benefit I've seen having my site for the last two days is that I get to intentionally misspell stuff and write with an accent that isn't mine and "
+      [:strong "ain't nobody can tell me what to do."] "
+And for me that's more meaningful than this 100 score."]]}
 
    {:slug "why-clojure"
     :title "Clojure for the past 9 years and forseeable future"

@@ -49,17 +49,12 @@ nav {
 
   a {
     text-transform: uppercase;
-    // padding: 20px 40px;
-    padding: clamp(8px, 2vw, 20px) clamp(14px, 2vw, 40px);
+    padding: clamp(12px, 2vw, 20px) clamp(14px, 2vw, 40px);
     text-decoration: none;
     font-weight: 700;
 
     &:first-child {
       justify-self: start;
-    }
-
-    &:visited {
-      // color: var(--fg);
     }
 
     &.active, &:hover {
@@ -80,7 +75,7 @@ nav {
 }
 
 #page {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 #verbiage {
@@ -196,4 +191,5 @@ figure {
 code {
   font-family: "Source Code Pro", monospace;
   color: var(--fg-muted);
+  white-space: nowrap;
 }
