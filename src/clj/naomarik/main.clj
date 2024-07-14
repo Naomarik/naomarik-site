@@ -24,32 +24,32 @@
 
     (condp = [request-method route id]
       [:get "/" nil]
-      {:body (pages/home-page)
+      {:body (pages/home-page req)
        :headers {"Content-Type" "text/html"}
        :status 200}
 
       [:get "/projects" nil]
-      {:body (pages/projects)
+      {:body (pages/projects req)
        :headers {"Content-Type" "text/html"}
        :status 200}
 
       [:get "/projects" id]
-      {:body (pages/project id)
+      {:body (pages/project req id)
        :headers {"Content-Type" "text/html"}
        :status 200}
 
       [:get "/verbiage" nil]
-      {:body (pages/verbiage)
+      {:body (pages/verbiage req)
        :headers {"Content-Type" "text/html"}
        :status 200}
 
       [:get "/verbiage" id]
-      {:body (pages/post id)
+      {:body (pages/post req id)
        :headers {"Content-Type" "text/html"}
        :status 200}
 
       [:get "/aboot" nil]
-      {:body (pages/aboot)
+      {:body (pages/aboot req)
        :headers {"Content-Type" "text/html"}
        :status 200}
 
@@ -67,8 +67,8 @@
        :headers {"Content-Type" "application/javascript"}
        :status 200}
 
-      [:get "/css" "style.css"]
-      {:body (slurp (io/file (str "build/css/style.css")))
+      [:get "/css" id]
+      {:body (io/file (io/resource (str "build/css/" id)))
        :headers {"Content-Type" "text/css"}
        :status 200}
 
@@ -97,6 +97,7 @@
 
 (comment
   ;; restart server
+  (run :dev)
   (do
     (when-let [instance @server] (instance))
     #_(reset! server nil)))
