@@ -18,7 +18,9 @@
                ["/aboot" "Aboot" :aboot]])]))
 
 (defn render [page & [opts]]
-  (let [{:keys [nav]} opts]
+  (let [{:keys [nav page-desc title]} opts
+        title (or title "@Naomarik")
+        page-desc (or page-desc "@Naomarik's Portfolio Site")]
     (str
      "<!doctype html>"
      (hic/html
@@ -26,9 +28,12 @@
        [:head
         [:link {:href favicon :rel "icon" :type "image/x-icon"}]
         [:meta {:charset "UTF-8"}]
+        [:meta {:name "description" :content page-desc}]
+        [:meta {:property "og:title" :content title}]
+        [:meta {:property "og:description" :content page-desc}]
         [:meta {:name "viewport"
                 :content "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"}]
-        [:title "@Naomarik"]
+        [:title title]
         [:script {:src "/js/index.min.js"}]
         [:link {:href (str "/css/style.css?ver=" @env/sha)
                 :rel "stylesheet"
@@ -94,7 +99,8 @@ Solving business problems in an impactful, robust way that lasts. Selling gimmic
      [:p "After exploring various static site generators, I decided to just make this from scratch with clojure.
 It's using HTMX powered with http-kit and babashka, served behind nginx and Cloudflare."]
      [:a {:href "https://github.com/Naomarik/naomarik-site"} "source on Github"]]]
-   {:nav :aboot}))
+   {:nav :aboot
+    }))
 
 (def writing
   [{:title "DDD: Data Driven Development"
@@ -154,12 +160,15 @@ and might end up writing a 'compiled' version that is denormalized but extremely
 
 (defn post [id]
   (let [item (first (filter #(= (:slug %) id) writing))
-        {:keys [title date content]} item]
+        {:keys [title date content]} item
+        head (str "@Naomarik - " title)]
     (render
      [:div#post.container.small
       [:div.entry
        [:h2 title]
-       [:span.date date] content]])))
+       [:span.date date] content]]
+     {:page-desc head
+      :title head})))
 
 (defn verbiage []
   (render
@@ -177,7 +186,8 @@ and might end up writing a 'compiled' version that is denormalized but extremely
                (if (= @env/mode :prod)
                  (filter #(not (:draft %)) writing)
                  writing)))]
-   {:nav :verbiage}))
+   {:nav :verbiage
+    :title "@Naomarik - Article Index"}))
 
 (def ^:private *hits (atom 0))
 (defn home-page []
@@ -201,7 +211,8 @@ and might end up writing a 'compiled' version that is denormalized but extremely
      [:br]
      [:div.hits (str (swap! *hits inc) " hits since last update. Deployed "
                      @env/sha)]]]
-   {:nav :home}))
+   {:nav :home
+    :page-desc "@Naomarik - Home"}))
 
 (def all-projects
   [{:id "motorsaif"
@@ -319,7 +330,9 @@ Wrote a bunch of regular expressions parsed instagram body adding metadata listi
                     [:p.desc desc]
                     [:a {:href url} "Learn More"]]))
                all-projects))]
-   {:nav :projects}))
+   {:nav :projects
+    :title "@Naomarik - Projects"
+    :page-desc "List of web applications worked on."}))
 
 (defn project [project-id]
   (let [project (first (filter #(= (:id %) project-id) all-projects))
@@ -330,4 +343,6 @@ Wrote a bunch of regular expressions parsed instagram body adding metadata listi
       (into [:div.tags]
             (map #(vector :span %) tags))
       [:p.desc desc]
-      page])))
+      page]
+     {:page-desc (str "@Naomarik - " title " - " desc)
+      :title (str "@Naomarik - " title)})))
