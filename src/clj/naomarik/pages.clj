@@ -114,7 +114,7 @@ Solving business problems in an impactful, robust way that lasts. Selling gimmic
      [:p "To more easily achieve the ever demanding need to mold software towards the requirements of reality, I have progressed from PHP to primarily using Clojure."]
 
      (img-with-caption
-      {:src "/img/aboot/bike.jpg"
+      {:src "/img/aboot/bike.webp"
        :caption "Most likely wouldn't be programming today if I didn't lowside my GSXR1000"
        :width 370})]
     [:section
@@ -232,7 +232,7 @@ on the same laptop does about 100 requests per second for a small JSON response.
 have some ideas in the future to grow this site to do more complex things than a static site can do. So I ended up turning that code Dmitri pasted to me into what this is today."]
      [:p "The lighthouse score was a bit of a surprise to me. It started off not being so perfect but was still very high."]
      (img-with-caption
-      {:src "/img/verbiage/june-2024/lighthouse.jpg"
+      {:src "/img/verbiage/june-2024/lighthouse.webp"
        :caption "Never seen this before, perfect lighthouse score"
        :width 370})
 
@@ -251,7 +251,7 @@ have some ideas in the future to grow this site to do more complex things than a
 where it'll build the css, rsync the project, restarts the process and it's all done under a few seconds."]
      [:p "Despite the score, this site still feels significantly slower than the SPAs I made previously because every page is being loaded on demand. Initial page load is much faster
 but ~150ms latency is very perceptible."]
-     (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Sayartii is extremely faster after the ~1 sec first load")
+     (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Sayartii page navs are instant after the ~1 sec initial load")
      [:p "I could have with just as little effort made this site a snappy SPA but decided against it for optimal search engine compatibility.
 Both have their tradeoffs and merits, but SPAs exist for a good reason and provide the optimal experience if done right."]
      [:p "To see everything this site is doing, you can find the source in the "
@@ -340,7 +340,7 @@ For me that's more meaningful than this 100 score."]]}
      [:div
       (img-with-caption
        {:src
-        "/img/home/ghaith.jpg"
+        "/img/home/ghaith.webp"
         :caption "Baby Ghaith"
         :width 770})]
      [:br]
@@ -355,18 +355,18 @@ For me that's more meaningful than this 100 score."]]}
     :tags ["Clojure" "Datomic" "PWA" "LIVE"]
     :desc "Automotive services. Make a request, get responses in the form of organized live chats from businesses."
     :page [:div#motorsaif
-           [:p "My current project. Solopreneur venture. Trying to fix the nightmare of getting a used car fixed."]
+           [:p "My current project. Trying to fix the nightmare of getting a used car fixed."]
            [:p "See it in action "
             [:a {:href "https://motorsaif.com"
                  :target "_blank"} "MotorSaif"]
 
             (img-with-caption
-             {:src "/img/projects/motorsaif/ms2.jpg"
+             {:src "/img/projects/motorsaif/ms2.webp"
               :caption "A successful request with receipt being sent as a picture in chat."
               :width 270})
             [:br]
             (img-with-caption
-             {:src "/img/projects/motorsaif/ms1.jpg"
+             {:src "/img/projects/motorsaif/ms1.webp"
               :caption "Businesses respond to a request. Chat threads are grouped and organized."
               :width 270})]]}
 
@@ -382,12 +382,12 @@ For me that's more meaningful than this 100 score."]]}
            (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")
            [:br]
            (img-with-caption
-            {:src "/img/projects/sayartii/analytics.png"
+            {:src "/img/projects/sayartii/analytics.webp"
              :caption "Analytics each user gets. Notice the jump when ad is featured (F)"
              :width 270})
            [:br]
            (img-with-caption
-            {:src "/img/projects/sayartii/backend.png"
+            {:src "/img/projects/sayartii/backend.webp"
              :caption "Backend showing ads posted per day"
              :width 370})]}
 
@@ -406,7 +406,7 @@ For me that's more meaningful than this 100 score."]]}
     :page [:div#booma
            [:p "First clojure project nearly making my cofounder and I both young millionaires. (Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's site for several months before running out of money and shutting down."]
            (img-with-caption
-            {:src "/img/projects/booma/kanban.png"
+            {:src "/img/projects/booma/kanban.webp"
              :caption "Kanban backend"
              :width 370})]}
 
@@ -439,11 +439,11 @@ Wrote a bunch of regular expressions parsed instagram body adding metadata listi
     :page [:div#umbria
            [:p "This is the first functional web app I've made back in 2012. A major upgrade from a previous project and migrations were also written. This had a community that paid real money for premium currency. Remnants of it can be found on waybackmachine."]
            (img-with-caption
-            {:src "/img/projects/umbria/trade.jpg"
+            {:src "/img/projects/umbria/trade.webp"
              :caption "Showing trade"
              :width 370})
            (img-with-caption
-            {:src "/img/projects/umbria/erdumbria.jpg"
+            {:src "/img/projects/umbria/erdumbria.webp"
              :caption "ERD diagram showing relationships"
              :width 370})]}])
 

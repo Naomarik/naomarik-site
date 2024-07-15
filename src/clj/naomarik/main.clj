@@ -54,13 +54,9 @@
        :status 200}
 
       [:get "/img" id]
-      (let [content-type (condp = (last (str/split id #"\."))
-                           "jpg" "image/jpeg"
-                           "jpeg" "image/jpeg"
-                           "png" "image/png")]
-        {:body (io/file (io/resource (str "img/" id)))
-         :headers {"Content-Type" content-type}
-         :status 200})
+      {:body (io/file (io/resource (str "build/img/" id)))
+       :headers {"Content-Type" "image/webp"}
+       :status 200}
 
       [:get "/js" "index.min.js"]
       {:body (slurp (io/file "build/js/index.min.js"))
