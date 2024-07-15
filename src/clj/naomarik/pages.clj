@@ -144,6 +144,65 @@ and might end up writing a 'compiled' version that is denormalized but extremely
     [:div.content
      [:p "this is"]]}
 
+   {:title "Being a 19 year old rascal in a corporate health care consortium"
+    :date "June 15, 2024"
+    :slug "corporate-rascal"
+    :content
+    [:div.content
+     [:p "Back when I was a wee kid I managed to get a job at Kaiser Permanente. My job description officially was"  [:i " Business Application Coordinator"] " or BAC and they hired a bunch of people at once
+in the who lived near bay area. My youngest colleague was 25 years old graduated with an Arts degree, followed by a 27 year old IT specialist. The average age of my colleagues was probably late 30s most
+having already started a family, so I naturally gravitated towards the two closest to my age."]
+
+     [:p "The premise of the role was that Kaiser has been using some legacy 1980s text based system for their entire hospital software, and it was time to upgrade to
+a nice modern GUI, with drag and drop features, layouts representing physical spaces of the hospital, interconnecting all systems, departments, handling all aspects of
+registration down to charting and viewing EKGs and x-rays. They were upgrading to " [:a {:href "https://www.epic.com/"} "Epic"] ", a behemoth of a system still standing today."]
+
+
+     [:p "We BACs were the frontline support standing alongside all hospital staff when they flicked the switched on in a staggered roll-out through California. My cohort had about 35 people."]
+
+     [:p "I attribute getting hired because I haad been teaching my neighbors and family friends how to use computers and software since I was a child, so I had many years of experience for this role."]
+
+     [:p "The job had three months of intensive training in mainly held in Emeryville with various instructors covering all the topic we needed to know. We were to understand intimately the entire
+workflow of all hospital staff and how they interact with the software, as well as the quirks that existed. This training was extremely boring to me because the UX was intuitive and I picked up on the workflows very fast."]
+
+     [:p "One type of training was a live demo in a large room filled with rows of desktop computers facing a presenter in a classroom setting. The software was sync'd across every PC in real time
+including the instructor, which all eyes were on."]
+
+     [:p "One day our instructor was a very serious tall well groomed man. One of my younger mates was sitting a few rows behind me where I could clearly see his face."]
+
+     [:p "I fondly remember this day because I managed to discover some networking admin commands and used them targeted to his PC to do random things. The first was a command that would alert him
+his computer was restarting at a time specified by me, which I could abort. The look on his face of sheer confusion made it extremely hard to contain myself and I was getting stern looks by the
+super serious instructor who had no idea what was going on. I would end up aborting the mandatory reboot right before it happened."]
+
+     [:p "At some other point I managed to find a folder of the most contrived silly stock photos were on every PC. I would issue commands to open these images and delight in reactions."]
+
+     [:p "One day we had training for ER. An extremely jovial lady who was a blast to have as instructor had a sur-name of McCoy. In front of the entire classroom, we had a live view of the current
+state of emergency department (ED) patients in our system, and we could all edit them in real time. I edited various patients to have a surnames that included my friend's hypenated
+with the instructor, so for instance Butler-McCoy or Bond-McCoy and gave them chief complaints of some common STDs."]
+
+     [:p "They picked up on this and we started having a battle of who could one up each other on silly chief complaints like exploive projectile diarrahea and going as far as to use our entire
+real names. Most people were completely oblivious to what we were doing or said nothing and the instructor just thought we were enjoying her class way too much."]
+
+     [:p "One morning I was getting coffee with my friend in Jack London Square, standing in line and recounting my various deeds. A man behind us overheard what I was saying and
+confronted me telling me he was an admin working there and had no idea that all the computers had admin access to each other."]
+
+     [:p "Corporate email was also not secure from my shenangians. At point we were cross coordinating with another team of about 50 people. One young woman
+sent us some email that had a benign grammar mistake. I went to my colleague and told him I would buy him two tacos if he replies with an e-mail pointing out the mistake. He refused but I did
+not relent. He finally acquiesced to my bribe of 4 tacos and with my help we composed a reply, CCing the entire list pointing out the grammar mistake. It's so petty but it still makes me giddy
+writing about it."]
+
+     [:p "My very first deployment we were all shadowing experienced BAC veterans in Walnut Creek. One nurse looked up, saw me and " [:i "Aren't you too young to be working in the emergency department?"]]
+
+     [:p "Among all my colleagues everyone came to me for help when they had issues they couldn't resolve. We were deployed for months at various Kaiser hospitals in California and I was always stationed
+    in the emergency department because the doctors and nurses there had zero patience to deal with support that wasn't quick."]
+
+     [:p "I made many friends during that time, and my most memorable deployment was at the Kaiser stationed inside San Francisco. My young self made friends with everyone and would routinely bring Starbucks
+and sometimes pho back for the staff."]
+
+     [:p "Socially the job was a blast. But I always felt like I had no progression because I hit the skill ceiling immediately with this work. Nothing about the job was difficult and the only thing
+that kept me engaged were the people. Knowing the ins and outs of every system at Kaiser and every single workflow every staff member used was not challenging me mentally. A skill ceiling simply
+does not exist in the realm of software engineering and I'm glad I left when I did, but I still miss working with great people."]]}
+
    {:slug "new-site"
     :title "My new custom portfolio blog scores a perfect 100 on Lighthouse"
     :date "June 15, 2024"
@@ -175,6 +234,13 @@ have some ideas in the future to grow this site to do more complex things than a
        :caption "Never seen this before, perfect lighthouse score"
        :width 370})
 
+     [:p "That shows:"]
+     [:ul
+      [:li "100 Performance"]
+      [:li "100 Accessibility"]
+      [:li "100 Performance"]
+      [:li "100 SEO"]]
+
      [:p "This is my first time using HTMX and I'm using boosted URLs on every link, which just makes an ajax request and swaps out the html instead of doing a full page load."]
      [:p "I figured HTMX would send something announcing itself in its ajax requests and I was right, finding " [:code "hx-boosted"] " being included in the headers."]
      [:p "So I inlined all the site's CSS excluding font imports for the first page request and any boosted requests would not serve any JS or CSS."]
@@ -182,15 +248,15 @@ have some ideas in the future to grow this site to do more complex things than a
      [:p "I'm used to a compile + deployment time of about a minute on my current projects for both backend and frontend. All I have to do with this is type " [:code "bb go"] "
 where it'll build the css, rsync the project, restarts the process and it's all done under a few seconds."]
      [:p "Despite the score, this site still feels significantly slower than the SPAs I made previously because every page is being loaded on demand. Initial page load is much faster
-but 150ms latency is very perceptible."]
+but ~150ms latency is very perceptible."]
      (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Sayartii is extremely faster after the ~1 sec first load")
      [:p "I could have with just as little effort made this site a snappy SPA but decided against it for optimal search engine compatibility.
 Both have their tradeoffs and merits, but SPAs exist for a good reason and provide the optimal experience if done right."]
      [:p "To see everything this site is doing, you can find the source in the "
       [:a {:href "/aboot"} "Aboot"] " page"]
-     [:p "So far largest benefit I've seen having my site for the last two days is that I get to intentionally misspell stuff and write with an accent that isn't mine and "
-      [:strong "ain't nobody can tell me what to do."] "
-And for me that's more meaningful than this 100 score."]]}
+     [:p "Largest benefit of having a personal site is that I get to humor myself with my nonsense, intentionally misspell stuff "
+      [:strong "ain't nobody can do anything about dat."] "
+For me that's more meaningful than this 100 score."]]}
 
    {:slug "why-clojure"
     :title "Clojure for the past 9 years and forseeable future"
