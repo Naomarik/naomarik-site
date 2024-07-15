@@ -31,6 +31,18 @@ body {
 
 a {
   color: var(--fg);
+
+  &.btn {
+    background: hsl(from var(--fg) h s l / .15);
+    padding: 4px 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      background: hsl(from var(--fg) h s l / .20);
+    }
+  }
 }
 
 #home {
@@ -111,10 +123,6 @@ nav {
       &:not(:last-child) {
         border-bottom: 1px solid var(--bg-accent);
       }
-    }
-
-    a {
-      display: block;
     }
   }
 }

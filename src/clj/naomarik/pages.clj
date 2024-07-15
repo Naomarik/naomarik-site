@@ -332,23 +332,19 @@ For me that's more meaningful than this 100 score."]]}
   (render
    [:div#home.container
     [:h1 "Naomarik aka Omar Hughes "]
-
     [:div.grid
      [:div
       [:p "This is where you can find up to date information on my projects and writings."]
-      [:p "Reach me by email with "
-       [:strong
-        "site at naomarik.com"]]]
+      [:p "Get in contact: "
+       [:a.btn {:href "mailto:omar@naomarik.com"} "omar@naomarik.com"]]]
      [:div
       (img-with-caption
        {:src
         "/img/home/ghaith.jpg"
         :caption "Baby Ghaith"
-        :width 770})
-      ]
+        :width 770})]
      [:br]
-     [:div.hits (str @*hits " hits since last update. Deployed "
-                     @env/sha)]]]
+     [:div.hits (str @*hits " renders since last update. Deployed " @env/sha)]]]
    {:nav :home
     :req req
     :page-desc "@Naomarik - Home"}))
@@ -461,13 +457,11 @@ Wrote a bunch of regular expressions parsed instagram body adding metadata listi
           (map (fn [{:keys [id title tags desc]}]
                  (let [url (str "/projects/" id)]
                    [:div.entry
-                    [:h3
-                     [:a {:href url}
-                      title]]
+                    [:h3 title]
                     (into [:div.tags]
                           (map #(vector :span %) tags))
                     [:p.desc desc]
-                    [:a {:href url} "Learn More"]]))
+                    [:a.btn {:href url} "Learn More"]]))
                all-projects))]
    {:nav :projects
     :title "@Naomarik - Projects"
