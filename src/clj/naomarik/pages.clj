@@ -19,12 +19,14 @@
 
 (def ^:private css (slurp (io/file (str "build/css/style.css"))))
 
+(def ^:private *hits (atom 0))
 (defn render [page & [opts]]
   (let [{:keys [nav req page-desc title]} opts
         title (or title "@Naomarik")
         page-desc (or page-desc "@Naomarik's Portfolio Site")
         boosted? (= "true" (get-in req [:headers "hx-boosted"]))
         build @env/mode]
+    (swap! *hits inc)
     (str
      "<!doctype html>"
      (hic/html
@@ -326,7 +328,6 @@ For me that's more meaningful than this 100 score."]]}
     :req req
     :title "@Naomarik - Article Index"}))
 
-(def ^:private *hits (atom 0))
 (defn home-page [req]
   (render
    [:div#home.container
@@ -346,7 +347,7 @@ For me that's more meaningful than this 100 score."]]}
         :width 770})
       ]
      [:br]
-     [:div.hits (str (swap! *hits inc) " hits since last update. Deployed "
+     [:div.hits (str @*hits " hits since last update. Deployed "
                      @env/sha)]]]
    {:nav :home
     :req req
