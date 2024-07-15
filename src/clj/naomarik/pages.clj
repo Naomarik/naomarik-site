@@ -350,102 +350,189 @@ For me that's more meaningful than this 100 score."]]}
     :page-desc "@Naomarik - Home"}))
 
 (def all-projects
-  [{:id "motorsaif"
-    :title "MotorSaif"
-    :tags ["Clojure" "Datomic" "PWA" "LIVE"]
-    :desc "Automotive services. Make a request, get responses in the form of organized live chats from businesses."
-    :page [:div#motorsaif
-           [:p "My current project. Trying to fix the nightmare of getting a used car fixed."]
-           [:p "See it in action "
-            [:a {:href "https://motorsaif.com"
-                 :target "_blank"} "MotorSaif"]
-
-            (img-with-caption
-             {:src "/img/projects/motorsaif/ms2.webp"
-              :caption "A successful request with receipt being sent as a picture in chat."
-              :width 270})
-            [:br]
-            (img-with-caption
-             {:src "/img/projects/motorsaif/ms1.webp"
-              :caption "Businesses respond to a request. Chat threads are grouped and organized."
-              :width 270})]]}
-
-   {:id "sayartii"
-    :title "Sayartii"
-    :tags ["Clojure" "Datomic" "Elasticsearch" "LIVE"]
-    :desc "Car classified platform, serving ~1M unique users monthly."
-    :page [:div#sayartii
-           [:a {:href "https://sayartii.com"
-                :target "_blank"} "Sayartii.com"]
-           [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]
-
-           (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")
-           [:br]
+  (let [project-img (fn [id img]
+                      (format "/img/projects/%s/%s.webp" id img))]
+    [(let [img (partial project-img "motorsaif") ]
+       {:id "motorsaif"
+        :title "MotorSaif"
+        :tags ["Clojure" "Datomic" "PWA" "LIVE"]
+        :desc "Automotive services. Make a request, get responses in the form of organized live chats from businesses."
+        :thumb (img "home")
+        :page
+        [:div#motorsaif
+         [:p "Actively developing. Trying to fix the nightmare of getting a used car fixed."]
+         [:p "See it in action "
+          [:a {:href "https://motorsaif.com"
+               :target "_blank"} "MotorSaif"]
+          [:div.grid
            (img-with-caption
-            {:src "/img/projects/sayartii/analytics.webp"
-             :caption "Analytics each user gets. Notice the jump when ad is featured (F)"
-             :width 270})
-           [:br]
+            {:src (img "home")
+             :caption "Home"})
            (img-with-caption
-            {:src "/img/projects/sayartii/backend.webp"
-             :caption "Backend showing ads posted per day"
-             :width 370})]}
-
-   {:id "aceplace"
-    :title "Aceplace"
-    :tags ["Clojure" "Datomic"]
-    :desc "Booking platform for meetings and events."
-    :page [:div#aceplace
-           [:p "CTO of Aceplace for a time and made nearly this entire platform myself before I left after company ran out of funding. Coded entire initial MVP myself that led to our first bookings. Also hired and managed other devs."]
-           [:p "Site was relaunched pivoting to booking only yachts."]]}
-
-   {:id "booma"
-    :title "Booma"
-    :tags ["Clojure" "Postgres"]
-    :desc "Live Chat SaaS with kanban dashboard."
-    :page [:div#booma
-           [:p "First clojure project nearly making my cofounder and I both young millionaires. (Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's site for several months before running out of money and shutting down."]
+            {:src (img "requests")
+             :caption "Desktop view of requests"
+             })]
+          [:div.grid.col-2
            (img-with-caption
-            {:src "/img/projects/booma/kanban.webp"
-             :caption "Kanban backend"
-             :width 370})]}
+            {:src (img "mchats")
+             :caption "All requests and previews of how many people replied to each"
+             })
+           (img-with-caption
+            {:src (img "mchat")
+             :caption "A successful request with receipt being sent as a picture in chat."
+             })
+           (img-with-caption
+            {:src (img "mreplies")
+             :caption "Businesses respond to a request. Chat threads are grouped and organized."
+             })]]]})
 
-   {:id "wantfu"
-    :title "WantFu"
-    :tags ["React Native" "Clojurescript" "Datomic"]
-    :desc "Reverse classifieds. You want, you get."
-    :page [:div#wantfu
-           [:p "React Native app with small backend. First time using datomic. React Native coded in clojurescript."]
-           (youtube-embed
-            "https://www.youtube.com/embed/1tTzRdFfq1Q?si=n_ubJhpBw4vrbvVf"
-            "Video of WantFu.")
-           [:section]]}
+     (let [img (partial project-img "sayartii")]
+       {:id "sayartii"
+        :title "Sayartii"
+        :tags ["Clojure" "Datomic" "Elasticsearch" "LIVE"]
+        :desc "Car classified platform, serving ~1M unique users monthly."
+        :thumb (img "listings")
+        :page [:div#sayartii
+               [:a {:href "https://sayartii.com"
+                    :target "_blank"} "Sayartii.com"]
+               [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]
+               (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")
+               [:div.grid
+                (img-with-caption
+                 {:src (img "mnew-home")
+                  :caption "Mobile landing page"
+                  })
+                (img-with-caption
+                 {:src (img "listings")
+                  :caption "Listings"
+                  })
+                (img-with-caption
+                 {:src (img "listing")
+                  :caption "Car Ad"
+                  })
+                (img-with-caption
+                 {:src (img "dealerdash")
+                  :caption "Dashboard for dealerships to quickly manage listings and see analytics"
+                  })
+                (img-with-caption
+                 {:src (img "analytics")
+                  :caption "Analytics each user gets. Notice the jump when ad is featured (F)"
+                  })
+                (img-with-caption
+                 {:src (img "backend")
+                  :caption "Backend showing ads posted per day"})]]})
 
-   {:id "zoweeq"
-    :title "ZoweeQ"
-    :tags ["Rails" "Elasticsearch"]
-    :desc "Post ads via Instagram by merely adding #zoweeq. Categorized and searchable."
-    :page [:div#zoweeq
-           [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
+     (let [img (partial project-img "aceplace")]
+       {:id "aceplace"
+        :title "Aceplace"
+        :thumb (img "spaces")
+        :tags ["Clojure" "Datomic"]
+        :desc "Booking platform for meetings and events in venues across UAE."
+        :page [:div#aceplace
+               [:p "CTO of Aceplace for a time and made nearly this entire platform
+myself before I left after company ran out of funding. Coded entire initial MVP myself that
+led to our first bookings. Also hired and managed other devs."]
+               [:p "Site was relaunched pivoting to booking only yachts."]
+
+               [:div.grid.col-2
+                (img-with-caption
+                 {:src (img "mhome")
+                  :caption "Mobile Home"})
+                (img-with-caption
+                 {:src (img "mbusiness")
+                  :caption "Business Process"})
+
+                (img-with-caption
+                 {:src (img "mlisting")
+                  :caption "Mobile Listing"})
+
+                (img-with-caption
+                 {:src (img "mbooking")
+                  :caption "Checkout process"})]
+               [:div.grid
+                (img-with-caption
+                 {:src (img "yachts")
+                  :caption "Yachts"
+                  })
+                (img-with-caption
+                 {:src (img "spaces")
+                  :caption "Unique Venues"})]]})
+
+     (let [img (partial project-img "booma")]
+       {:id "booma"
+        :title "Booma"
+        :thumb (img "home")
+        :tags ["Clojure" "Postgres"]
+        :desc "Live Chat SaaS with kanban dashboard."
+        :page [:div#booma
+               [:p "First clojure project nearly making my cofounder and I both young millionaires.
+(Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's
+site for several months before running out of money and shutting down."]
+               [:div.grid
+                (img-with-caption
+                 {:src (img "home")
+                  :caption "home"})
+                (img-with-caption
+                 {:src (img "kanban")
+                  :caption "Kanban backend"})
+                (img-with-caption
+                 {:src (img "timeline-expanded")
+                  :caption "Timeline of events in the form of tickets"})
+                (img-with-caption
+                 {:src (img "sidebyside")
+                  :caption "A side by side view of backend dashboard and customer chat."})]
+
+               [:p "This form is dynamic in that it could ask different questions depending
+on user's responses."]
+               (img-with-caption
+                {:src (img "typeform")
+                 :caption "A small typeform clone"})
+               [:div.grid
+                (img-with-caption
+                 {:src (img "makingform")
+                  :caption "Interface making custom forms"})
+                (img-with-caption
+                 {:src (img "questiongroups")
+                  :caption "Creating question groups"})]]})
+
+     (let [img (partial project-img "wantfu")]
+       {:id "wantfu"
+        :title "WantFu"
+        :thumb (img "wantfu")
+        :tags ["React Native" "Clojurescript" "Datomic"]
+        :desc "Reverse classifieds. You want, you get."
+        :page [:div#wantfu
+               [:p "React Native app with small backend. First time using datomic. React Native coded in clojurescript."]
+               (youtube-embed
+                "https://www.youtube.com/embed/1tTzRdFfq1Q?si=n_ubJhpBw4vrbvVf"
+                "Video of WantFu.")
+               [:section]]})
+
+     {:id "zoweeq"
+      :title "ZoweeQ"
+      :tags ["Rails" "Elasticsearch"]
+      :desc "Post ads via Instagram by merely adding #zoweeq. Categorized and searchable."
+      :page [:div#zoweeq
+             [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
 Wrote a bunch of regular expressions parsed instagram body adding metadata listing and categorize."]
-           (youtube-embed
-            "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
-            "Searching cars on ZoweeQ")]}
+             (youtube-embed
+              "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
+              "Searching cars on ZoweeQ")]}
 
-   {:id "umbria"
-    :title "World of Umbria"
-    :tags ["PHP" "CodeIgniter"]
-    :desc "Social fantasy steampunk pet growing, clicking, trading game."
-    :page [:div#umbria
-           [:p "This is the first functional web app I've made back in 2012. A major upgrade from a previous project and migrations were also written. This had a community that paid real money for premium currency. Remnants of it can be found on waybackmachine."]
-           (img-with-caption
-            {:src "/img/projects/umbria/trade.webp"
-             :caption "Showing trade"
-             :width 370})
-           (img-with-caption
-            {:src "/img/projects/umbria/erdumbria.webp"
-             :caption "ERD diagram showing relationships"
-             :width 370})]}])
+     {:id "umbria"
+      :title "World of Umbria"
+      :tags ["PHP" "CodeIgniter"]
+      :desc "Social fantasy steampunk pet growing, clicking, trading game."
+      :page [:div#umbria
+             [:p "This is the first functional web app I've made back in 2012. A major upgrade from a previous project and migrations were also written. This had a community that paid real money for premium currency. Remnants of it can be found on waybackmachine."]
+             (img-with-caption
+              {:src "/img/projects/umbria/trade.webp"
+               :caption "Showing trade"
+               :width 370})
+             (img-with-caption
+              {:src "/img/projects/umbria/erdumbria.webp"
+               :caption "ERD diagram showing relationships"
+               :width 370})]}]))
 
 (defn projects [req]
   (render
@@ -454,14 +541,18 @@ Wrote a bunch of regular expressions parsed instagram body adding metadata listi
     [:p "The following are a list of notable projects I've worked on."]
     [:p "Most of these I have developed completely myself with regards to backend, frontend, and deployment."]
     (into [:div#entries]
-          (map (fn [{:keys [id title tags desc]}]
+          (map (fn [{:keys [id title tags desc thumb]}]
                  (let [url (str "/projects/" id)]
                    [:div.entry
-                    [:h3 title]
-                    (into [:div.tags]
-                          (map #(vector :span %) tags))
-                    [:p.desc desc]
-                    [:a.btn {:href url} "Learn More"]]))
+                    [:div.info
+                     [:h3 title]
+                     (into [:div.tags]
+                           (map #(vector :span %) tags))
+                     [:p.desc desc]
+                     [:a.btn {:href url} "More Details"]]
+                    [:a.preview
+                     {:href url}
+                     [:img {:src thumb}]]]))
                all-projects))]
    {:nav :projects
     :title "@Naomarik - Projects"

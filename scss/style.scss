@@ -12,6 +12,8 @@
   --bg: #272930;
   --bg-accent: #2B5164;
   --bg-highlight: #007F8B;
+
+  --shadow: black;
 }
 
 p {
@@ -104,6 +106,18 @@ nav {
 }
 
 #project  {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: end;
+
+    &.col-2 {
+      gap: 4px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   .desc {
     font-weight: 700;
     font-style: italic;
@@ -115,6 +129,18 @@ nav {
   #entries {
     .entry {
       padding: 26px 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+
+      .preview {
+        padding: 10px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
 
       h3 {
         margin-top: 0px;
@@ -168,7 +194,6 @@ figure {
   }
 
   img:hover {
-    transform: scale(1.1);
   }
 }
 
