@@ -6,7 +6,6 @@ INPUT_DIR="src-img"
 OUTPUT_DIR="resources/build/img"
 
 # Find all image files (you can adjust the file extensions as needed)
-#
 find "$INPUT_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.bmp' -o -iname '*.tiff' \) | while read file; do
   # Get the relative path of the file from the input directory
   relative_path="${file#$INPUT_DIR/}"
@@ -23,7 +22,10 @@ find "$INPUT_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png'
 
   echo "Converting $relative_dir/$filename"
   # Convert the image to WebP format and save it in the output directory
-  cwebp -q 85 "$file" -o "$OUTPUT_DIR/$relative_dir/$base.webp"
+  cwebp -q 80 "$file" -o "$OUTPUT_DIR/$relative_dir/$base.webp"
 done
 
-$echo du
+echo "Input"
+$echo du -h -d 1 $INPUT_DIR
+echo "Output"
+$echo du -h -d 1 $OUTPUT_DIR

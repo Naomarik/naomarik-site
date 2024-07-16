@@ -108,7 +108,9 @@
      [:p "I'm a fairly private person publicly and don't do social media."]]
     [:section
      [:h2 "The Developer"]
-     [:p "I've been doing fullstack development since 2011, working directly with CEO types before that title means anything to either of us. I've taken a lot of advice to heart from Paul Graham, reading his essays since 2014 trying to make this startup thing work for myself. I've experienced the highs and lows of startup life multiple times, survived on little until investment was secured and built things starting from the core problem outwards."]
+     [:p "I've been doing fullstack development since 2011, working directly with CEO types before that title means anything to either of us. I've taken a lot of advice to
+heart from Paul Graham, reading his essays since 2014 trying to make this startup thing work for myself. I've experienced the highs and lows of startup life multiple times, survived on
+little until investment was secured and built things starting from the core problem outwards."]
      [:p "I believe in building something people want that enhances their experience in life.
 Solving business problems in an impactful, robust way that lasts. Selling gimmicks and hype does not stand the test of time."]
      [:p "To more easily achieve the ever demanding need to mold software towards the requirements of reality, I have progressed from PHP to primarily using Clojure."]
@@ -302,7 +304,7 @@ For me that's more meaningful than this 100 score."]]}
     (render
      [:div#post.container.small
       [:div.entry
-       [:h2 title]
+       [:h1 title]
        [:span.date date] content]]
      {:page-desc head
       :req req
@@ -358,12 +360,14 @@ For me that's more meaningful than this 100 score."]]}
         :tags ["Clojure" "Datomic" "PWA" "LIVE"]
         :desc "Automotive services. Make a request, get responses in the form of organized live chats from businesses."
         :thumb (img "home")
+        :link "https://motorsaif.com/"
         :page
         [:div#motorsaif
          [:p "Actively developing. Trying to fix the nightmare of getting a used car fixed."]
          [:p "See it in action "
           [:a {:href "https://motorsaif.com"
                :target "_blank"} "MotorSaif"]
+
           [:div.grid
            (img-with-caption
             {:src (img "home")
@@ -371,52 +375,47 @@ For me that's more meaningful than this 100 score."]]}
            (img-with-caption
             {:src (img "requests")
              :caption "Desktop view of requests"})]
+
           [:div.grid.col-2
            (img-with-caption
             {:src (img "mchats")
-             :caption "All requests and previews of how many people replied to each"
-             })
+             :caption "All requests and previews of how many people replied to each"})
            (img-with-caption
             {:src (img "mchat")
-             :caption "A successful request with receipt being sent as a picture in chat"
-             })
+             :caption "A successful request with receipt being sent as a picture in chat"})
            (img-with-caption
             {:src (img "mreplies")
-             :caption "Businesses responses to a request, chat threads are grouped and organized"
-             })]]]})
+             :caption "Businesses responses to a request, chat threads are grouped and organized"})]]]})
 
      (let [img (partial project-img "sayartii")]
        {:id "sayartii"
         :title "Sayartii"
         :tags ["Clojure" "Datomic" "Elasticsearch" "LIVE"]
         :desc "Car classified platform, serving ~1M unique users monthly."
-        :thumb (img "listings")
+        :thumb (img "mnew-home")
+        :link "https://sayartii.com/"
         :page [:div#sayartii
                [:a {:href "https://sayartii.com"
                     :target "_blank"} "Sayartii.com"]
                [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]
                (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")
+
                [:div.grid
                 (img-with-caption
                  {:src (img "mnew-home")
-                  :caption "Mobile landing page"
-                  })
+                  :caption "Mobile landing page"})
                 (img-with-caption
                  {:src (img "listings")
-                  :caption "Listings"
-                  })
+                  :caption "Listings"})
                 (img-with-caption
                  {:src (img "listing")
-                  :caption "Car Ad"
-                  })
+                  :caption "Car Ad"})
                 (img-with-caption
                  {:src (img "dealerdash")
-                  :caption "Dashboard for dealerships to quickly manage listings and see analytics"
-                  })
+                  :caption "Dashboard for dealerships to quickly manage listings and see analytics"})
                 (img-with-caption
                  {:src (img "analytics")
-                  :caption "Analytics each user gets. Notice the jump when ad is featured (F)"
-                  })
+                  :caption "Analytics each user gets. Notice the jump when ad is featured (F)"})
                 (img-with-caption
                  {:src (img "backend")
                   :caption "Backend showing ads posted per day"})]]})
@@ -424,38 +423,42 @@ For me that's more meaningful than this 100 score."]]}
      (let [img (partial project-img "aceplace")]
        {:id "aceplace"
         :title "Aceplace"
-        :thumb (img "spaces")
+        :thumb (img "home")
         :tags ["Clojure" "Datomic"]
         :desc "Booking platform for meetings and events in venues across UAE."
-        :page [:div#aceplace
-               [:p "CTO of Aceplace for a time and made nearly this entire platform
+        :page
+        [:div#aceplace
+         [:p "CTO of Aceplace for a time and made nearly this entire platform
 myself before I left after company ran out of funding. Coded entire initial MVP myself that
 led to our first bookings. Also hired and managed other devs."]
-               [:p "Site was relaunched pivoting to booking only yachts."]
+         [:p "Site was relaunched pivoting to booking only yachts."]
 
-               [:div.grid.col-2
-                (img-with-caption
-                 {:src (img "mhome")
-                  :caption "Mobile Home"})
-                (img-with-caption
-                 {:src (img "mbusiness")
-                  :caption "Business Process"})
+         (img-with-caption
+          {:src (img "home")
+           :caption "Home"})
 
-                (img-with-caption
-                 {:src (img "mlisting")
-                  :caption "Mobile Listing"})
+         [:div.grid.col-2
+          (img-with-caption
+           {:src (img "mhome")
+            :caption "Mobile home"})
+          (img-with-caption
+           {:src (img "mbusiness")
+            :caption "Business process"})
+          (img-with-caption
+           {:src (img "mlisting")
+            :caption "Mobile listing"})
+          (img-with-caption
+           {:src (img "mbooking")
+            :caption "Checkout process"})]
 
-                (img-with-caption
-                 {:src (img "mbooking")
-                  :caption "Checkout process"})]
-               [:div.grid
-                (img-with-caption
-                 {:src (img "yachts")
-                  :caption "Yachts"
-                  })
-                (img-with-caption
-                 {:src (img "spaces")
-                  :caption "Unique Venues"})]]})
+         [:div.grid
+          (img-with-caption
+           {:src (img "yachts")
+            :caption "Yachts"
+            })
+          (img-with-caption
+           {:src (img "spaces")
+            :caption "Unique venues"})]]})
 
      (let [img (partial project-img "booma")]
        {:id "booma"
@@ -467,31 +470,29 @@ led to our first bookings. Also hired and managed other devs."]
                [:p "First clojure project nearly making my cofounder and I both young millionaires.
 (Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's
 site for several months before running out of money and shutting down."]
-               [:div.grid
-                (img-with-caption
-                 {:src (img "home")
-                  :caption "Home"})
-                (img-with-caption
-                 {:src (img "kanban")
-                  :caption "Kanban backend"})
-                (img-with-caption
-                 {:src (img "timeline-expanded")
-                  :caption "Timeline of events in the form of tickets"})
-                (img-with-caption
-                 {:src (img "sidebyside")
-                  :caption "A side by side view of backend dashboard and customer chat"})]
+               (img-with-caption
+                {:src (img "home")
+                 :caption "Home"})
+               (img-with-caption
+                {:src (img "kanban")
+                 :caption "Kanban backend"})
+               (img-with-caption
+                {:src (img "timeline-expanded")
+                 :caption "Timeline of events in the form of tickets"})
+               (img-with-caption
+                {:src (img "sidebyside")
+                 :caption "A side by side view of backend dashboard and customer chat"})
                [:p "This form is dynamic in that it could ask different questions depending
 on user's responses."]
                (img-with-caption
                 {:src (img "typeform")
                  :caption "A small typeform clone"})
-               [:div.grid
-                (img-with-caption
-                 {:src (img "makingform")
-                  :caption "Interface making custom forms"})
-                (img-with-caption
-                 {:src (img "questiongroups")
-                  :caption "Creating question groups"})]]})
+               (img-with-caption
+                {:src (img "makingform")
+                 :caption "Interface making custom forms"})
+               (img-with-caption
+                {:src (img "questiongroups")
+                 :caption "Creating question groups"})]})
 
      (let [img (partial project-img "wantfu")]
        {:id "wantfu"
@@ -552,18 +553,21 @@ Remnants of it can be found on waybackmachine."]
   (render
    [:div#projects.container
     [:h1 "Projects"]
-    [:p "The following are a list of notable projects I've worked on."]
-    [:p "Most of these I have developed completely myself with regards to backend, frontend, and deployment."]
-    (into [:div#entries]
-          (map (fn [{:keys [id title tags desc thumb]}]
+    [:p "The following are a list of notable projects I've created."]
+    [:p "Most of these I have developed completely myself with regards to frontend, backend, and deployment."]
+    (into [:div.projects]
+          (map (fn [{:keys [id title link tags desc thumb]}]
                  (let [url (str "/projects/" id)]
-                   [:div.entry
+                   [:div.project
                     [:div.info
                      [:h3 title]
                      (into [:div.tags]
                            (map #(vector :span %) tags))
                      [:p.desc desc]
-                     [:a.btn {:href url} "More Details"]]
+                     [:div.links
+                      [:a.btn {:href url} "More Details"]
+                      (when link [:a.btn {:href link
+                                          :target "_blank"} "Visit Site"])]]
                     [:a.preview
                      {:href url}
                      [:img {:src thumb}]]]))
