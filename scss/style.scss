@@ -109,11 +109,10 @@ nav {
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 4px;
     align-items: end;
 
     &.col-2 {
-      gap: 4px;
       grid-template-columns: 1fr 1fr;
     }
   }

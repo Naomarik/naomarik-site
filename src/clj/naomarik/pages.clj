@@ -370,8 +370,7 @@ For me that's more meaningful than this 100 score."]]}
              :caption "Home"})
            (img-with-caption
             {:src (img "requests")
-             :caption "Desktop view of requests"
-             })]
+             :caption "Desktop view of requests"})]
           [:div.grid.col-2
            (img-with-caption
             {:src (img "mchats")
@@ -379,11 +378,11 @@ For me that's more meaningful than this 100 score."]]}
              })
            (img-with-caption
             {:src (img "mchat")
-             :caption "A successful request with receipt being sent as a picture in chat."
+             :caption "A successful request with receipt being sent as a picture in chat"
              })
            (img-with-caption
             {:src (img "mreplies")
-             :caption "Businesses respond to a request. Chat threads are grouped and organized."
+             :caption "Businesses responses to a request, chat threads are grouped and organized"
              })]]]})
 
      (let [img (partial project-img "sayartii")]
@@ -471,7 +470,7 @@ site for several months before running out of money and shutting down."]
                [:div.grid
                 (img-with-caption
                  {:src (img "home")
-                  :caption "home"})
+                  :caption "Home"})
                 (img-with-caption
                  {:src (img "kanban")
                   :caption "Kanban backend"})
@@ -480,8 +479,7 @@ site for several months before running out of money and shutting down."]
                   :caption "Timeline of events in the form of tickets"})
                 (img-with-caption
                  {:src (img "sidebyside")
-                  :caption "A side by side view of backend dashboard and customer chat."})]
-
+                  :caption "A side by side view of backend dashboard and customer chat"})]
                [:p "This form is dynamic in that it could ask different questions depending
 on user's responses."]
                (img-with-caption
@@ -505,34 +503,50 @@ on user's responses."]
                [:p "React Native app with small backend. First time using datomic. React Native coded in clojurescript."]
                (youtube-embed
                 "https://www.youtube.com/embed/1tTzRdFfq1Q?si=n_ubJhpBw4vrbvVf"
-                "Video of WantFu.")
+                "Video of WantFu")
                [:section]]})
 
-     {:id "zoweeq"
-      :title "ZoweeQ"
-      :tags ["Rails" "Elasticsearch"]
-      :desc "Post ads via Instagram by merely adding #zoweeq. Categorized and searchable."
-      :page [:div#zoweeq
-             [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
+     (let [img (partial project-img "zoweeq")]
+       {:id "zoweeq"
+        :title "ZoweeQ"
+        :tags ["Rails" "Elasticsearch"]
+        :thumb (img "post")
+        :desc "Post ads via Instagram by merely adding #zoweeq. Categorized and searchable."
+        :page [:div#zoweeq
+               [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
 Wrote a bunch of regular expressions parsed instagram body adding metadata listing and categorize."]
-             (youtube-embed
-              "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
-              "Searching cars on ZoweeQ")]}
+               (youtube-embed
+                "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
+                "Searching cars on ZoweeQ")
+               [:div.grid
+                (img-with-caption
+                 {:src (img "post")
+                  :caption "Post on instagram, gets listed on site"})
+                (img-with-caption
+                 {:src (img "search")
+                  :caption "Search page"})]]})
 
-     {:id "umbria"
-      :title "World of Umbria"
-      :tags ["PHP" "CodeIgniter"]
-      :desc "Social fantasy steampunk pet growing, clicking, trading game."
-      :page [:div#umbria
-             [:p "This is the first functional web app I've made back in 2012. A major upgrade from a previous project and migrations were also written. This had a community that paid real money for premium currency. Remnants of it can be found on waybackmachine."]
-             (img-with-caption
-              {:src "/img/projects/umbria/trade.webp"
-               :caption "Showing trade"
-               :width 370})
-             (img-with-caption
-              {:src "/img/projects/umbria/erdumbria.webp"
-               :caption "ERD diagram showing relationships"
-               :width 370})]}]))
+     (let [img (partial project-img "umbria")]
+       {:id "umbria"
+        :title "World of Umbria"
+        :tags ["PHP" "CodeIgniter"]
+        :thumb (img "home")
+        :desc "Social fantasy steampunk pet growing, clicking, trading game."
+        :page [:div#umbria
+               [:p "This is the first functional web app I've made back in 2012.
+A major upgrade from a previous project and migrations were also written.
+This had a community that paid real money for premium currency.
+Remnants of it can be found on waybackmachine."]
+               [:div.grid
+                (img-with-caption
+                 {:src (img "home")
+                  :caption "Home page, recovered with waybackmachine"})
+                (img-with-caption
+                 {:src (img "trade")
+                  :caption "Showing trade"})
+                (img-with-caption
+                 {:src (img "erdumbria")
+                  :caption "ERD diagram showing relationships"})]]})]))
 
 (defn projects [req]
   (render
