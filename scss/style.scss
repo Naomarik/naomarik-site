@@ -179,6 +179,7 @@ nav {
 
     &:first-child {
       justify-self: start;
+      padding: clamp(11px, 2vw, 20px) clamp(16px, 2vw, 40px);
     }
 
     &.active, &:hover {

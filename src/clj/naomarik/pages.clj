@@ -78,26 +78,7 @@
         (main-nav nav)
         [:div#page
          page]]
-       (when-not boosted? [:script {:src "/js/index.min.js"}])
-
-       [:script (hic/raw "
-document.body.addEventListener('htmx:beforeSwap', function(evt) {
-    let incomingDOM = new DOMParser().parseFromString(evt.detail.xhr.response, \"text/html\");
-    // Transpose <meta> data, page-specific <link> tags and JSON-LD structured data
-    // Note that hx-boost automatically swaps the <title> tag
-    let selector = \"head > meta:not([data-revision]), head *[rel='canonical'] \";
-    document.querySelectorAll(selector).forEach((e) => {
-        e.parentNode.removeChild(e);
-    });
-    incomingDOM.querySelectorAll(selector).forEach((e) => {
-        if (e.tagName === 'SCRIPT') {
-            document.body.appendChild(e);
-        } else {
-            document.head.appendChild(e);
-        }
-    })
-}); ")]
-
+       (when-not boosted? [:script {:src "/js/index.min.js?ver=1"}])
        (when (= build :dev)
          [:script {:src "https://livejs.com/live.js"}])]))))
 
@@ -265,7 +246,7 @@ have some ideas in the future to grow this site to do more complex things than a
      [:div.center
       (img-with-caption
        {:src "/img/verbiage/june-2024/lighthouse.webp"
-        :caption "Never seen this before, perfect lighthouse score"
+        :caption "Never seen did this before, a perfect lighthouse score"
         :width 370})]
 
      [:p "That shows:"]
