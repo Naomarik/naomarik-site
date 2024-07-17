@@ -6,6 +6,8 @@
    [clojure.java.shell :as sh]
    [hiccup2.core :as hic]))
 
+
+
 (defn -image-dims [path]
   (let [path (format "resources/build/%s" path)]
     (edn/read-string (:out (sh/sh "./webpimagesize" path)))))
@@ -33,7 +35,8 @@
         title (or title "@Naomarik")
         page-desc (or page-desc "@Naomarik's Portfolio Site")
         boosted? (= "true" (get-in req [:headers "hx-boosted"]))
-        build @env/mode]
+        build @env/mode
+        {:keys [uri]} req canonical (format "https://naomarik.com%s" uri)]
     (swap! *hits inc)
     (str
      "<!doctype html>"
@@ -41,7 +44,10 @@
       [:html
        {:lang "en"}
        (-> [:head
+
             [:meta {:charset "UTF-8"}]
+            [:link {:rel "canonical"
+                    :href canonical}]
             [:link {:rel "preconnect"
                     :href "https://fonts.gstatic.com"
                     :crossorigin true}]
@@ -74,9 +80,26 @@
          page]]
        (when-not boosted? [:script {:src "/js/index.min.js"}])
 
+       [:script (hic/raw "
+document.body.addEventListener('htmx:beforeSwap', function(evt) {
+    let incomingDOM = new DOMParser().parseFromString(evt.detail.xhr.response, \"text/html\");
+    // Transpose <meta> data, page-specific <link> tags and JSON-LD structured data
+    // Note that hx-boost automatically swaps the <title> tag
+    let selector = \"head > meta:not([data-revision]), head *[rel='canonical'] \";
+    document.querySelectorAll(selector).forEach((e) => {
+        e.parentNode.removeChild(e);
+    });
+    incomingDOM.querySelectorAll(selector).forEach((e) => {
+        if (e.tagName === 'SCRIPT') {
+            document.body.appendChild(e);
+        } else {
+            document.head.appendChild(e);
+        }
+    })
+}); ")]
 
        (when (= build :dev)
-         [:script {:src "https://livejs.com/live.js"}])]))))
+           [:script {:src "https://livejs.com/live.js"}])]))))
 
 (defn img-with-caption [{:keys [src caption height width]}]
   [:figure
@@ -439,7 +462,6 @@ For me that's more meaningful than this 100 score."]]}
          [:p "CTO of Aceplace for a time and made nearly this entire platform
 myself before I left after company ran out of funding. Coded entire initial MVP myself that
 led to our first bookings. Also hired and managed other devs."]
-         [:p "Site was relaunched pivoting to booking only yachts."]
 
          (img-with-caption
           {:src (img "home")
