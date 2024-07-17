@@ -79,32 +79,30 @@
          [:script {:src "https://livejs.com/live.js"}])]))))
 
 (defn img-with-caption [{:keys [src caption height width]}]
-  [:div.center
-   [:figure
-    {:style (cond-> {}
-              height
-              (assoc :height (str height "px"))
-              width
-              (assoc :width (str width "px")))}
-    [:a {:href src
-         :target "_blank"}
-     [:img (merge {:src src
-                   :alt caption}
-                  (image-dims src))]]
-    [:figcaption caption]]])
+  [:figure
+   {:style (cond-> {}
+             height
+             (assoc :height (str height "px"))
+             width
+             (assoc :width (str width "px")))}
+   [:a {:href src
+        :target "_blank"}
+    [:img (merge {:src src
+                  :alt caption}
+                 (image-dims src))]]
+   [:figcaption caption]])
 
 (defn youtube-embed [url caption]
-  [:div.center
-   [:figure
-    [:iframe {:width "560",
-              :height "315"
-              :src url,
-              :title "YouTube video player"
-              :frameborder "0",
-              :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-              :referrerpolicy "strict-origin-when-cross-origin",
-              :allowfullscreen true}]
-    [:figcaption caption]]])
+  [:figure.youtube
+   [:iframe {:width "560",
+             :height "315"
+             :src url,
+             :title "YouTube video player"
+             :frameborder "0",
+             :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+             :referrerpolicy "strict-origin-when-cross-origin",
+             :allowfullscreen true}]
+   [:figcaption caption]])
 
 (defn aboot [req]
   (render
@@ -261,7 +259,8 @@ have some ideas in the future to grow this site to do more complex things than a
 where it'll build the css, rsync the project, restarts the process and it's all done under a few seconds."]
      [:p "Despite the score, this site still feels significantly slower than the SPAs I made previously because every page is being loaded on demand. Initial page load is much faster
 but ~150ms latency is very perceptible."]
-     (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Sayartii page navs are instant after the ~1 sec initial load")
+     [:div.center
+      (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Sayartii page navs are instant after the ~1 sec initial load")]
      [:p "I could have with just as little effort made this site a snappy SPA but decided against it for optimal search engine compatibility.
 Both have their tradeoffs and merits, but SPAs exist for a good reason and provide the optimal experience if done right."]
      [:p "To see everything this site is doing, you can find the source in the "
@@ -407,8 +406,8 @@ For me that's more meaningful than this 100 score."]]}
                [:a {:href "https://sayartii.com"
                     :target "_blank"} "Sayartii.com"]
                [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]
-               (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")
-
+               [:div.center
+                (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")]
                [:div.grid
                 (img-with-caption
                  {:src (img "mnew-home")
