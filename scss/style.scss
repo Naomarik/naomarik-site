@@ -14,7 +14,7 @@
   --bg-highlight: #007F8B;
 
   --shadow: black;
-  // bg-col #33343b
+  --bg-light: #33343b;
 }
 
 // @media (prefers-color-scheme: light) {
@@ -45,6 +45,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: 'Open Sans', sans-serif;
+  padding-bottom: 10px;
 }
 
 a {
@@ -56,6 +57,7 @@ a {
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
+    font-weight: 600;
 
     &:hover {
       background: hsl(from var(--fg) h s l / .20);
@@ -64,17 +66,17 @@ a {
 }
 
 .center {
-  width: 100%;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 figure {
-  padding: 5px;
-  margin: 0 auto;
+  margin: 0;
   vertical-align: top;
   width: 100%;
   display: inline-block;
+
 
   &.youtube {
     width: auto;
@@ -110,7 +112,9 @@ figure {
 
 .container {
   margin: 0 auto;
-  padding: 20px;
+  border-radius: 5px;
+  padding-inline: 30px;
+  padding-block: 20px 24px;
   max-width: 920px;
 
   &.small {
@@ -141,6 +145,11 @@ figure {
 code {
   font-family: "Source Code Pro", monospace;
   color: var(--fg-muted);
+  background: var(--bg-light);
+  border: 1px solid hsl(from var(--fg-muted) h s l / .40);
+  font-size: 90%;
+  border-radius: 4px;
+  padding: 2px 4px;
   white-space: nowrap;
 }
 
@@ -218,7 +227,6 @@ nav {
       }
 
       img {
-        // background: var(--fg-muted);
         display: inline-blojck;
         height: auto;
         width: 100%;
@@ -236,10 +244,16 @@ nav {
 }
 
 #project  {
+  --gap: 9px;
+
+  section {
+    margin-bottom: var(--gap);
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 4px;
+    gap: var(--gap);
     align-items: end;
 
     &.col-2 {

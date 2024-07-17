@@ -99,7 +99,7 @@ document.body.addEventListener('htmx:beforeSwap', function(evt) {
 }); ")]
 
        (when (= build :dev)
-           [:script {:src "https://livejs.com/live.js"}])]))))
+         [:script {:src "https://livejs.com/live.js"}])]))))
 
 (defn img-with-caption [{:keys [src caption height width]}]
   [:figure
@@ -262,10 +262,11 @@ on the same laptop does about 100 requests per second for a small JSON response.
      [:p "None of the existing blogging solutions really appealed to me. Not because they're bad, but I'm lazy and don't want to learn anything especially when it's going to be more verbose than clojure. I also
 have some ideas in the future to grow this site to do more complex things than a static site can do. So I ended up turning that code Dmitri pasted to me into what this is today."]
      [:p "The lighthouse score was a bit of a surprise to me. It started off not being so perfect but was still very high."]
-     (img-with-caption
-      {:src "/img/verbiage/june-2024/lighthouse.webp"
-       :caption "Never seen this before, perfect lighthouse score"
-       :width 370})
+     [:div.center
+      (img-with-caption
+       {:src "/img/verbiage/june-2024/lighthouse.webp"
+        :caption "Never seen this before, perfect lighthouse score"
+        :width 370})]
 
      [:p "That shows:"]
      [:ul
@@ -277,6 +278,7 @@ have some ideas in the future to grow this site to do more complex things than a
      [:p "This is my first time using HTMX and I'm using boosted URLs on every link, which just makes an ajax request and swaps out the html instead of doing a full page load."]
      [:p "I figured HTMX would send something announcing itself in its ajax requests and I was right, finding " [:code "hx-boosted"] " being included in the headers."]
      [:p "So I inlined all the site's CSS excluding font imports for the first page request and any boosted requests would not serve any JS or CSS."]
+     [:p "I also convert all images to webp and set their original sizes in the image tag to prevent layout shifts while loading."]
 
      [:p "I'm used to a compile + deployment time of about a minute on my current projects for both backend and frontend. All I have to do with this is type " [:code "bb go"] "
 where it'll build the css, rsync the project, restarts the process and it's all done under a few seconds."]
@@ -287,10 +289,7 @@ but ~150ms latency is very perceptible."]
      [:p "I could have with just as little effort made this site a snappy SPA but decided against it for optimal search engine compatibility.
 Both have their tradeoffs and merits, but SPAs exist for a good reason and provide the optimal experience if done right."]
      [:p "To see everything this site is doing, you can find the source in the "
-      [:a {:href "/aboot"} "Aboot"] " page"]
-     [:p "Largest benefit of having a personal site is that I get to humor myself with my nonsense, intentionally misspell stuff "
-      [:strong "ain't nobody can do anything about dat."] "
-For me that's more meaningful than this 100 score."]]}
+      [:a {:href "/aboot"} "Aboot"] " page"]]}
 
    {:slug "why-clojure"
     :title "Clojure for the past 9 years and forseeable future"
@@ -399,7 +398,7 @@ For me that's more meaningful than this 100 score."]]}
           [:a {:href "https://motorsaif.com"
                :target "_blank"} "MotorSaif"]
 
-          [:div.grid
+          [:section.grid
            (img-with-caption
             {:src (img "home")
              :caption "Home"})
@@ -407,7 +406,7 @@ For me that's more meaningful than this 100 score."]]}
             {:src (img "requests")
              :caption "Desktop view of requests"})]
 
-          [:div.grid.col-2
+          [:section.grid.col-2
            (img-with-caption
             {:src (img "mchats")
              :caption "All requests and previews of how many people replied to each"})
@@ -426,12 +425,14 @@ For me that's more meaningful than this 100 score."]]}
         :thumb (img "mnew-home")
         :link "https://sayartii.com/"
         :page [:div#sayartii
-               [:a {:href "https://sayartii.com"
-                    :target "_blank"} "Sayartii.com"]
-               [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]
-               [:div.center
-                (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")]
-               [:div.grid
+               [:section
+                [:a {:href "https://sayartii.com"
+                     :target "_blank"} "Sayartii.com"]
+                [:p "Created and maintaining entire site. Cool features include a dealership dashboard, infinite scroll, analytics on ads."]]
+               [:section
+                [:div.center
+                 (youtube-embed "https://www.youtube.com/embed/sBzgPQ2a0bs?si=raT_5t2L3hBMABLz" "Video demonstrating site speed")]]
+               [:section.grid
                 (img-with-caption
                  {:src (img "mnew-home")
                   :caption "Mobile landing page"})
@@ -459,15 +460,17 @@ For me that's more meaningful than this 100 score."]]}
         :desc "Booking platform for meetings and events in venues across UAE."
         :page
         [:div#aceplace
-         [:p "CTO of Aceplace for a time and made nearly this entire platform
+         [:section
+          [:p "CTO of Aceplace for a time and made nearly this entire platform
 myself before I left after company ran out of funding. Coded entire initial MVP myself that
-led to our first bookings. Also hired and managed other devs."]
+led to our first bookings. Also hired and managed other devs."]]
 
-         (img-with-caption
-          {:src (img "home")
-           :caption "Home"})
+         [:section
+          (img-with-caption
+           {:src (img "home")
+            :caption "Home"})]
 
-         [:div.grid.col-2
+         [:section.grid.col-2
           (img-with-caption
            {:src (img "mhome")
             :caption "Mobile home"})
@@ -480,8 +483,7 @@ led to our first bookings. Also hired and managed other devs."]
           (img-with-caption
            {:src (img "mbooking")
             :caption "Checkout process"})]
-
-         [:div.grid
+         [:section.grid
           (img-with-caption
            {:src (img "yachts")
             :caption "Yachts"
@@ -497,32 +499,35 @@ led to our first bookings. Also hired and managed other devs."]
         :tags ["Clojure" "Postgres"]
         :desc "Live Chat SaaS with kanban dashboard."
         :page [:div#booma
-               [:p "First clojure project nearly making my cofounder and I both young millionaires.
+               [:section
+                [:p "First clojure project nearly making my cofounder and I both young millionaires.
 (Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's
-site for several months before running out of money and shutting down."]
-               (img-with-caption
-                {:src (img "home")
-                 :caption "Home"})
-               (img-with-caption
-                {:src (img "kanban")
-                 :caption "Kanban backend"})
-               (img-with-caption
-                {:src (img "timeline-expanded")
-                 :caption "Timeline of events in the form of tickets"})
-               (img-with-caption
-                {:src (img "sidebyside")
-                 :caption "A side by side view of backend dashboard and customer chat"})
+site for several months before running out of money and shutting down."]]
+               [:section.grid
+                (img-with-caption
+                 {:src (img "home")
+                  :caption "Home"})
+                (img-with-caption
+                 {:src (img "kanban")
+                  :caption "Kanban backend"})
+                (img-with-caption
+                 {:src (img "timeline-expanded")
+                  :caption "Timeline of events in the form of tickets"})
+                (img-with-caption
+                 {:src (img "sidebyside")
+                  :caption "A side by side view of backend dashboard and customer chat"})]
                [:p "This form is dynamic in that it could ask different questions depending
 on user's responses."]
-               (img-with-caption
-                {:src (img "typeform")
-                 :caption "A small typeform clone"})
-               (img-with-caption
-                {:src (img "makingform")
-                 :caption "Interface making custom forms"})
-               (img-with-caption
-                {:src (img "questiongroups")
-                 :caption "Creating question groups"})]})
+               [:section.grid
+                (img-with-caption
+                 {:src (img "typeform")
+                  :caption "A small typeform clone"})
+                (img-with-caption
+                 {:src (img "makingform")
+                  :caption "Interface making custom forms"})
+                (img-with-caption
+                 {:src (img "questiongroups")
+                  :caption "Creating question groups"})]]})
 
      (let [img (partial project-img "wantfu")]
        {:id "wantfu"
@@ -531,11 +536,12 @@ on user's responses."]
         :tags ["React Native" "Clojurescript" "Datomic"]
         :desc "Reverse classifieds. You want, you get."
         :page [:div#wantfu
-               [:p "React Native app with small backend. First time using datomic. React Native coded in clojurescript."]
-               (youtube-embed
-                "https://www.youtube.com/embed/1tTzRdFfq1Q?si=n_ubJhpBw4vrbvVf"
-                "Video of WantFu")
-               [:section]]})
+               [:section
+                [:p "React Native app with small backend. First time using datomic. React Native coded in clojurescript."]]
+               [:section.center
+                (youtube-embed
+                 "https://www.youtube.com/embed/1tTzRdFfq1Q?si=n_ubJhpBw4vrbvVf"
+                 "Video of WantFu")]]})
 
      (let [img (partial project-img "zoweeq")]
        {:id "zoweeq"
@@ -544,12 +550,14 @@ on user's responses."]
         :thumb (img "post")
         :desc "Post ads via Instagram by merely adding #zoweeq. Categorized and searchable."
         :page [:div#zoweeq
-               [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
-Wrote a bunch of regular expressions parsed instagram body adding metadata listing and categorize."]
-               (youtube-embed
-                "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
-                "Searching cars on ZoweeQ")
-               [:div.grid
+               [:section
+                [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
+Wrote a bunch of regular expressions parsed instagram body adding metadata listing and categorize."]]
+               [:section
+                (youtube-embed
+                 "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
+                 "Searching cars on ZoweeQ")]
+               [:section.grid
                 (img-with-caption
                  {:src (img "post")
                   :caption "Post on instagram, gets listed on site"})
@@ -564,11 +572,12 @@ Wrote a bunch of regular expressions parsed instagram body adding metadata listi
         :thumb (img "home")
         :desc "Social fantasy steampunk pet growing, clicking, trading game."
         :page [:div#umbria
-               [:p "This is the first functional web app I've made back in 2012.
+               [:section
+                [:p "This is the first functional web app I've made back in 2012.
 A major upgrade from a previous project and migrations were also written.
 This had a community that paid real money for premium currency.
-Remnants of it can be found on waybackmachine."]
-               [:div.grid
+Remnants of it can be found on waybackmachine."]]
+               [:section.grid
                 (img-with-caption
                  {:src (img "home")
                   :caption "Home page, recovered with waybackmachine"})
