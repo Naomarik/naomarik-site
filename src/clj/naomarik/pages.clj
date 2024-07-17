@@ -2,7 +2,15 @@
   (:require
    [naomarik.env :as env]
    [clojure.java.io :as io]
+   [clojure.edn :as edn]
+   [clojure.java.shell :as sh]
    [hiccup2.core :as hic]))
+
+(defn -image-dims [path]
+  (let [path (format "resources/build/%s" path)]
+    (edn/read-string (:out (sh/sh "./webpimagesize" path)))))
+
+(def image-dims (memoize -image-dims))
 
 (def ^:private favicon "data:image/png;base64,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")
 
@@ -80,8 +88,9 @@
               (assoc :width (str width "px")))}
     [:a {:href src
          :target "_blank"}
-     [:img {:src src
-            :alt caption}]]
+     [:img (merge {:src src
+                   :alt caption}
+                  (image-dims src))]]
     [:figcaption caption]]])
 
 (defn youtube-embed [url caption]
@@ -117,8 +126,7 @@ Solving business problems in an impactful, robust way that lasts. Selling gimmic
 
      (img-with-caption
       {:src "/img/aboot/bike.webp"
-       :caption "Most likely wouldn't be programming today if I didn't lowside my GSXR1000"
-       :width 370})]
+       :caption "Most likely wouldn't be programming today if I didn't lowside my GSXR1000"})]
     [:section
      [:h2 "The Site"]
      [:p "After exploring various static site generators, I decided to just make this from scratch with clojure.
@@ -344,7 +352,8 @@ For me that's more meaningful than this 100 score."]]}
        {:src
         "/img/home/ghaith.webp"
         :caption "Baby Ghaith"
-        :width 770})]
+        ;; :width 770
+        })]
      [:br]
      [:div.hits (str @*hits " renders since last update. Deployed " @env/sha)]]]
    {:nav :home
@@ -570,7 +579,10 @@ Remnants of it can be found on waybackmachine."]
                                           :target "_blank"} "Visit Site"])]]
                     [:a.preview
                      {:href url}
-                     [:img {:src thumb}]]]))
+                     [:img
+                      (merge
+                       (image-dims thumb)
+                       {:src thumb})]]]))
                all-projects))]
    {:nav :projects
     :title "@Naomarik - Projects"
