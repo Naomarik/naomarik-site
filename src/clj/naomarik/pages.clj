@@ -128,7 +128,7 @@ Solving business problems in an impactful, robust way that lasts. Selling gimmic
 
      (img-with-caption
       {:src "/img/aboot/bike.webp"
-       :caption "Most likely wouldn't be programming today if I didn't lowside my GSXR1000"})]
+       :caption "Remnants of my GSXR1000, an event that would set the trajectory I am on today."})]
     [:section
      [:h2 "The Site"]
      [:p "After exploring various static site generators, I decided to just make this from scratch with clojure.
@@ -396,7 +396,7 @@ Both have their tradeoffs and merits, but SPAs exist for a good reason and provi
              :caption "A successful request with receipt being sent as a picture in chat"})
            (img-with-caption
             {:src (img "mreplies")
-             :caption "Businesses responses to a request, chat threads are grouped and organized"})]]]})
+             :caption "Businesses respond to an open request. From a request owner point of view, chats are grouped and contained within the context of that particular request"})]]]})
 
      (let [img (partial project-img "sayartii")]
        {:id "sayartii"
@@ -481,16 +481,16 @@ led to our first bookings. Also hired and managed other devs."]]
         :desc "Live Chat SaaS with kanban dashboard."
         :page [:div#booma
                [:section
-                [:p "First clojure project nearly making my cofounder and I both young millionaires.
-(Un?)fortunately that didn't happen and I'm still grinding. It was used by Dubai Statistics's
-site for several months before running out of money and shutting down."]]
+                [:p "First project I did in clojure. This was meant as B2B SaaS chat to help businesses deal with customers by giving them
+an efficient interface to deal with livechats, allowing a ticket to be passed in between departments and tables to better direct a customer to someone that could help them.
+It was used by Dubai Statistics's site for several months before I ultimately shut the site down."]]
                [:section.grid
                 (img-with-caption
                  {:src (img "home")
                   :caption "Home"})
                 (img-with-caption
                  {:src (img "kanban")
-                  :caption "Kanban backend"})
+                  :caption "Kanban backend. Default tables were Inbox and Owned. Other boards and tables could also be created to triage customers."})
                 (img-with-caption
                  {:src (img "timeline-expanded")
                   :caption "Timeline of events in the form of tickets"})
