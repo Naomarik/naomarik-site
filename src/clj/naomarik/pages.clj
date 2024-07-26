@@ -169,43 +169,42 @@ It was me, one Rails developer colleague, and the CEO. We were completely dumbfo
 
 
 
-   {:title "Cloudstrike and the criticality of data validation in systems"
+   {:title "Cloudstrike and the criticality of data validation in maintaining integrity of systems"
     :date "June 26, 2024"
     :slug "cloudstrike"
-    :draft true
     :content
     [:div.content
-     [:p
-      "
-https://www.youtube.com/watch?v=wAzEJxOo1ts
-      A windows developer made a video explaining why all windows computers using cloudstrike bluescreened. In short, they have code running on windows that _blindly_ takes any update they push from
-      their servers to keep their malware protection up to date. that was pushed to every computer from Cloudstrike's servers allegedly was full of garbage data and their windows driver should have checked the validity of the data before subsuming it.
-      "
-      ]
+     [:p "A windows developer made a video explaining why all windows computers using cloudstrike bluescreened. In short, they have code running on windows that
+" [:strong [:i "blindly"]] "
+takes any update they push from their servers to keep their malware protection up to date. that was pushed to every computer from Cloudstrike's servers allegedly was full of garbage data and their windows driver should have checked the validity of the data before subsuming it."]
 
-     [:p "Notice how I said _blindly_. He goes on to explain that if they did any kind of parameter validation that this kind of thing would have never happened.
-When creating software that can take random user input, or in the case of Crowdstrike even their own updates, anything that changes the state of a running program should be validated before accepted."
-      ]
+     [:p "Notice how I said blindly. He goes on to explain that if they did any kind of parameter validation that this kind of thing could have never happened. When creating software that can take random user input, or in the case of Crowdstrike even their own updates, anything that changes the state of a running program should be validated before accepted."]
 
 
-     [:p "This kind of issue has been well documented in various forms, SQL injection being one of them. Ensuring the integrity of a live system does not just depend on protecting against common security mistakes,
-you need to have granular data validation about every single input that a user has access to." ]
+     [:p "This kind of issue has been well documented in various forms, SQL injection being one of them. Ensuring the integrity of a live system does not just depend on protecting against common security mistakes, systems also need to have granular data validation about every single input that a user has access to. How large can a number be? How many characters can a description contain? What are the valid characters of a user handle? Given two sets of data, how are they valid with each other? I actually saw a code in booking platform that allowed you to set the end time lower than the start time for booking, displaying a negative price to the user."]
 
-     [:p "Take a description field in a web form. You might be limited to the amount of text you can write where the UI will give you an error. The backend however might store that description text as an unbounded
-column in a database table. If the backend just accepts the data to be saved from the client relying it fully to be constrained, you run the risk of a malicious person being able to craft an API request to potentially save the entire English dictionary." ]
+     [:p "Take a description field in a web form. You might be limited to the amount of text you can write where the UI will give you an error. The backend however might store that description text as an unbounded column in a database table. If the backend just accepts the data to be saved from the client relying it fully to be constrained, you run the risk of a malicious person being able to craft an API request to potentially save the entire English dictionary. If that is done enough times to a database, it can easily cause a system disk to run out of space bringing a platform down. Or even worse by blowing up the bill of a managed database instance to the point of being unpayable." ]
 
 
      [:p "I remember back around 2020ish, a user was able to crash Instagram for anyone visiting his profile page. The reason is that at the time Instagram was relying and blindly accepting their mobile app to specify the image dimensions being uploaded. The user managed to intercept those API requests and change them to absurdly large values which Instagram blindly committed to its database and pass on to its users.
 Most web stacks are not running the same validation code that the client uses, it's something that has to be coded once for the client and again for the backend.
-Since the time of creating Booma, my first clojure project, every single piece of user input that gets saved gets validated with the same code used on the client and the backend. Clojure makes this extremely easy with .cljc files that allow you to share code that works on both frontend and backend. "]
+Since the time of creating Booma, my first clojure project, every single piece of user input that gets saved gets validated with the same code used on the client and the backend. Clojure makes this extremely easy with .cljc files that allow you to share code that works on both frontend and backend."]
 
      [:p "Malli, a data validation library in Clojure, makes specifying data extremely easy by providing probably the most terse syntax possible in our reality to define the shape of data and also be programmable and composable. This has been my go to for everything since before it even had a version number. With it I'm able to write only one time to both show users errors on input in the UI and also stand right in front of my database to reject any invalid data before it gets transacted.
 Data validation ensures that web platforms behave and act in the way intended by rejecting bad data and ensuring the overall integrity of a running system. "]
 
-     [:p "There's also a practice of generative testing which I seldom see which is code that stresses the limits of your code by continously passing in the most random sets of input possible. I vaguely
-recall a talk given by a software engineer that worked on code for an automobile that uncovered a bug only discovered with this method."]
+     [:p "There's also a practice of generative testing which I seldom see which is code that stresses the limits of your code by continously passing in the most random sets of input possible. I vaguely recall a talk given by a software engineer that worked on code for an automobile that uncovered a bug only discovered with this method."]
+
+     [:p "With regards to liability, if you're making a software company and you do not understand all the ins and outs of your system, it is solely the fault of the leadership to accept the responsibility for their ignorance. They chose who to hire, they decided how much time they spent trying to understand their tech, and they reap all the rewards.
+
+A company deploying silent updates to a low level kernel driver if set up properly should have been so robust that a monkey could have bashed at a computer and deployed any permutation of data even bypassing all checks that may have pre-flight."]
+     [:p "When relying on external input or updates, you should always assume the worst intent and code around that."]
 
 
+
+     [:div.center
+      (youtube-embed "https://www.youtube.com/embed/wAzEJxOo1ts?si=DN0O-kkSWHMnwWEw"
+                     "Windows Developer Explains Cloudstrike")]
      ]}
 
 
