@@ -3,6 +3,10 @@
 
 @import "reset";
 
+:root {
+  --gap: 9px;
+}
+
 :root, [data-theme="dark"] {
   --fg: white;
   --fg-alt: #F4F9FF;
@@ -15,6 +19,7 @@
 
   --shadow: black;
   --bg-light: #33343b;
+
 }
 
 // @media (prefers-color-scheme: light) {
@@ -244,22 +249,20 @@ nav {
   }
 }
 
-#project  {
-  --gap: 9px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 9px;
+  align-items: end;
 
+  &.col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#project  {
   section {
     margin-bottom: var(--gap);
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: var(--gap);
-    align-items: end;
-
-    &.col-2 {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 
   .desc {

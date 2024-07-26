@@ -340,6 +340,14 @@ Both have their tradeoffs and merits, but SPAs exist for a good reason and provi
      [:p "Clojure puts data and data transformations first, and all the things that were magical to me using Rails and the ruby ecosystem are plain to see in Clojure. Using an ORM for half my programming career at that point and CLI tools to generate controllers, models, and migrations was like being great at ordering fast food but not knowing how to put ingredients together and cook your own meal."]
 
      [:p "Object oriented programming just adds layers of nonsense to data. Instead of just taking information (a data structure) and acting on it (a function) you have to name everything, instantiate objects and twirl your in your chair reasoning, wondering, about the behavior of some object that has inherited 50 classes interspersed with public and private fields."]
+     [:div.grid.col-2
+      (img-with-caption
+       {:src "/img/verbiage/why-clojure/oopgarbage.webp"
+        :caption "Why would anyone choose this?"})
+
+      (img-with-caption
+       {:src "/img/verbiage/why-clojure/data-better.webp"
+        :caption "This is all you need"})]
 
      [:p "While it's pretty cool that you can call code like " [:code "User.all"] ", coming from a background like I did means if there is no magical method on an object that did something, you're in hard mode territory."]
 
@@ -391,7 +399,7 @@ Both have their tradeoffs and merits, but SPAs exist for a good reason and provi
   (render
    [:div#home.container
     [:h1 "Naomarik aka Omar Hughes "]
-    [:div.grid
+    [:div
      [:div
       [:p "This is where you can find up to date information on my projects and writings."]
       [:p "Get in contact: "
