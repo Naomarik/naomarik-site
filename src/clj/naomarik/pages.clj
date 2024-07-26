@@ -167,16 +167,14 @@ It was me, one Rails developer colleague, and the CEO. We were completely dumbfo
 
 
 
-
-
-   {:title "Cloudstrike and the criticality of data validation in maintaining integrity of systems"
+   {:title "Crowdstrike and the criticality of data validation in maintaining integrity of systems"
     :date "June 26, 2024"
-    :slug "cloudstrike"
+    :slug "crowdstrike"
     :content
     [:div.content
-     [:p "A windows developer made a video explaining why all windows computers using Cloudstrike bluescreened. In short, they have code running on windows that "
+     [:p "A windows developer made a video explaining why all windows computers using Crowdstrike bluescreened. In short, they have code running on windows that "
       [:strong [:i "blindly"]]
-      " takes any update they push from their servers to keep their malware protection up to date. This was pushed to every computer at the same time from Cloudstrike's servers and was allegedly full of garbage data that their windows driver failed to check the correctness of before subsuming it."]
+      " takes any update they push from their servers to keep their malware protection up to date. This was pushed to every computer at the same time from Crowdstrike's servers and was allegedly full of garbage data that their windows driver failed to check the correctness of before subsuming it."]
 
      [:p "Notice how I said blindly. He goes on to explain that if they did any kind of parameter validation that this kind of thing could have never happened. When creating software that can take random user input, or in the case of Crowdstrike even their own updates, anything that changes the state of a running program should be validated before accepted."]
 
@@ -200,7 +198,7 @@ A company deploying silent updates to a low level kernel driver at will, if set 
 
      [:div.center
       (youtube-embed "https://www.youtube.com/embed/wAzEJxOo1ts?si=DN0O-kkSWHMnwWEw"
-                     "Windows Developer Explains Cloudstrike BSOD")]]}
+                     "Windows Developer Explains Crowdstrike BSOD")]]}
 
 
 
