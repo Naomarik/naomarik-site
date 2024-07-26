@@ -151,12 +151,65 @@ I then think about the kind of 'consumption' the data structure needs in order t
 and might end up writing a 'compiled' version that is denormalized but extremely performant."]]}
 
    {:title "Bank Project"
-    :date "June 14, 2024"
+    :date "June 23, 2024"
     :slug "twitter-banking"
     :draft true
     :content
     [:div.content
-     [:p "this is"]]}
+     [:p "One of the most interesting projects while I was working for a now defunct startup called Brndstr was for a major bank in UAE. We were to build them Twitter Banking which allowed users to register their accounts through a process then send direct messages to their
+Twitter account and receive responses like their account balance or last five transactions."]
+     [:p "The problem description was as easy as I stated and they had a list of exactly what they wanted, if I recall correctly 10 or so. That was for Phase 1 of the project due first. Phase 2 would have another set of commands and responses, presumably because it would take more hours to implement."]
+     [:p "They first wanted to see if we were technically capable of doing such a thing, so they invited us to bring a computer into their main office and proudly presented us with an ethernet cable to plug into their network, gave us a piece of paper with some IP address and some instructions that none of us
+could decipher someone will be with you in 4 hours to answer your questions so good luck.
+It was me, one Rails developer colleague, and the CEO. We were completely dumbfounded, having no idea what to do."]
+     [:p "After waiting four hours the guy finally came to us also seemingly confused why he was there."]
+     ]}
+
+
+
+
+
+   {:title "Cloudstrike and the criticality of data validation in systems"
+    :date "June 26, 2024"
+    :slug "cloudstrike"
+    :draft true
+    :content
+    [:div.content
+     [:p
+      "
+https://www.youtube.com/watch?v=wAzEJxOo1ts
+      A windows developer made a video explaining why all windows computers using cloudstrike bluescreened. In short, they have code running on windows that _blindly_ takes any update they push from
+      their servers to keep their malware protection up to date. that was pushed to every computer from Cloudstrike's servers allegedly was full of garbage data and their windows driver should have checked the validity of the data before subsuming it.
+      "
+      ]
+
+     [:p "Notice how I said _blindly_. He goes on to explain that if they did any kind of parameter validation that this kind of thing would have never happened.
+When creating software that can take random user input, or in the case of Crowdstrike even their own updates, anything that changes the state of a running program should be validated before accepted."
+      ]
+
+
+     [:p "This kind of issue has been well documented in various forms, SQL injection being one of them. Ensuring the integrity of a live system does not just depend on protecting against common security mistakes,
+you need to have granular data validation about every single input that a user has access to." ]
+
+     [:p "Take a description field in a web form. You might be limited to the amount of text you can write where the UI will give you an error. The backend however might store that description text as an unbounded
+column in a database table. If the backend just accepts the data to be saved from the client relying it fully to be constrained, you run the risk of a malicious person being able to craft an API request to potentially save the entire English dictionary." ]
+
+
+     [:p "I remember back around 2020ish, a user was able to crash Instagram for anyone visiting his profile page. The reason is that at the time Instagram was relying and blindly accepting their mobile app to specify the image dimensions being uploaded. The user managed to intercept those API requests and change them to absurdly large values which Instagram blindly committed to its database and pass on to its users.
+Most web stacks are not running the same validation code that the client uses, it's something that has to be coded once for the client and again for the backend.
+Since the time of creating Booma, my first clojure project, every single piece of user input that gets saved gets validated with the same code used on the client and the backend. Clojure makes this extremely easy with .cljc files that allow you to share code that works on both frontend and backend. "]
+
+     [:p "Malli, a data validation library in Clojure, makes specifying data extremely easy by providing probably the most terse syntax possible in our reality to define the shape of data and also be programmable and composable. This has been my go to for everything since before it even had a version number. With it I'm able to write only one time to both show users errors on input in the UI and also stand right in front of my database to reject any invalid data before it gets transacted.
+Data validation ensures that web platforms behave and act in the way intended by rejecting bad data and ensuring the overall integrity of a running system. "]
+
+     [:p "There's also a practice of generative testing which I seldom see which is code that stresses the limits of your code by continously passing in the most random sets of input possible. I vaguely
+recall a talk given by a software engineer that worked on code for an automobile that uncovered a bug only discovered with this method."]
+
+
+     ]}
+
+
+
 
    {:title "Being a 19 year old rascal in a corporate health care consortium"
     :date "June 15, 2024"
@@ -529,11 +582,11 @@ on user's responses."]
         :title "ZoweeQ"
         :tags ["Rails" "Elasticsearch"]
         :thumb (img "post")
-        :desc "Post ads via Instagram by merely adding #zoweeq. Categorized and searchable."
+        :desc "Post ads via Instagram by including #zoweeq. Categorized and searchable."
         :page [:div#zoweeq
                [:section
                 [:p "Killed when Instagram shut off API access. Hired a designer from 99designs. Worked on this as a side project while having a fulltime job.
-Wrote a bunch of regular expressions parsed instagram body adding metadata listing and categorize."]]
+Wrote a bunch of regular expressions parsed instagram body adding price, category, phone, and car details."]]
                [:section
                 (youtube-embed
                  "https://www.youtube.com/embed/hVOAOrV2ZcE?si=HbKvLvQNUxGRps1T"
