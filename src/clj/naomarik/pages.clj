@@ -73,12 +73,12 @@
                        (cond-> (= build :prod)
                          (conj [:style (hic/raw css)]))))))
        [:body
-        {:hx-boost "true"
-         :hx-push-url "true"}
+        ;; {:hx-boost "true"
+        ;;  :hx-push-url "true"}
         (main-nav nav)
         [:div#page
          page]]
-       (when-not boosted? [:script {:src "/js/index.min.js?ver=1"}])
+       #_(when-not boosted? [:script {:src "/js/index.min.js?ver=1"}])
        (when (= build :dev)
          [:script {:src "https://livejs.com/live.js"}])]))))
 
@@ -128,11 +128,10 @@ Solving business problems in an impactful, robust way that lasts. Selling gimmic
 
      (img-with-caption
       {:src "/img/aboot/bike.webp"
-       :caption "Remnants of my GSXR1000, an event that would set the trajectory I am on today."})]
+       :caption "Remnants of my GSXR1000, an event that would set the trajectory I am on today"})]
     [:section
      [:h2 "The Site"]
-     [:p "After exploring various static site generators, I decided to just make this from scratch with clojure.
-It's using HTMX powered with http-kit and babashka, served behind nginx and Cloudflare."]
+     [:p "After exploring various static site generators, I decided to just make this from scratch with clojure. It's using http-kit and babashka, served behind nginx and Cloudflare."]
      [:a {:href "https://github.com/Naomarik/naomarik-site"} "source on Github"]]]
    {:nav :aboot
     :req req}))
@@ -165,9 +164,7 @@ It was me, one Rails developer colleague, and the CEO. We were completely dumbfo
      [:p "After waiting four hours the guy finally came to us also seemingly confused why he was there."]
      ]}
 
-
-
-   {:title "Crowdstrike and the criticality of data validation in maintaining integrity of systems"
+   {:title "Crowdstrike and the criticality of data validation in maintaining integrity in software systems"
     :date "June 26, 2024"
     :slug "crowdstrike"
     :content
@@ -270,13 +267,12 @@ does not exist in the realm of software engineering and I'm glad I left when I d
      [:p "I've been meaning to make a portfolio site forever. Upon embarking on any project, I always scan the landscape to see what people are using.
 Hugo and Jekyll are the two most well known. In the clojure space there is Cryogen, Clerk, and borkdude's quickblog."]
 
-     [:p "I was horrified to see people recommending a new one called Astro which claims it's a frontend agnostic hydra with SSG capabilities. It's probably cool
+     [:p "I was amazed to see people recommending a new one called Astro which claims it's a frontend agnostic chimera with SSG capabilities. It's probably cool
 and everything but I have no idea what purpose it serves to be able to swap out frontend frameworks like react and svelte instead of just choosing one.
-I don't know how anyone is supposed to learn to be proficient
-in anything when new frameworks and build tools come out at breakneck speed,
+I don't know how anyone is supposed to learn to be proficient in anything when new frameworks and build tools come out at breakneck speed,
 with changes breaking APIs and its users' sanity as they inevitably evolve."]
 
-     [:p "Anyway, after my horror died down, I started talking to "
+     [:p "Later I started talking to "
       [:a {:href "https://yogthos.net/"
            :targe "_blank"} "yogthos"]
       " about my intent to make a portfolio site and he showed me you can make a babashka script that launches an http-kit server using hiccup and htmx in a single file.
@@ -325,9 +321,15 @@ Both have their tradeoffs and merits, but SPAs exist for a good reason and provi
      [:p "Professionally it started with PHP where I was building out custom Wordpress blogs from Photoshop files. I then (re)made a very complicated online collectible virtual fantasy pet platform."]
      [:p "Upon completion of that, I didn't want anything to do with PHP ever again. I learned Rails and TDD to help me solve the problems I had with the complexity refactoring a PHP project."]
 
-     [:p "I jumped into web development just solving other people's needs without any formal background of software engineering. At some point when working on a side project in Rails, I realized I was a 'framework' programmer who was adept at doing things that had documentation and stitching libraries together, and so were my colleagues. Doing anything that strayed far away from the guard rails of what was provided to me wasn't very easy."]
+     [:p "I jumped into web development just solving other people's needs without any formal background of software engineering. At some point when working on
+a side project in Rails, I realized I was a 'framework' programmer who was adept at doing things that had documentation and stitching libraries together, and so
+were my colleagues. Doing anything that strayed far away from the guard rails of what was provided to me wasn't very easy."]
 
-     [:p "Early on in my career I attended a small hackathon event in Dubai for web developers. I destroyed the first two rounds, being the first one done and went beyond and above the requirements. Then they gave us some data in the form of csv and told us to visualize it. I froze up. This was unfamiliar territory, outside my ORM where I could do " [:code [:i "$object"] ".all.each"] " and iterate through it. I ended up spending the entire time allocated trying to hobble together a quick CSV to ORM library so I could work with the data in a manner that ORMs taught me to. I completely failed in doing that and ended up achieving nothing for that final round. It completely humbled my inflated ego from my first two wins."]
+     [:p "Early on in my career I attended a small hackathon event in Dubai for web developers. I destroyed the first two rounds, being the first one done and went beyond and above
+the requirements. Then they gave us some data in the form of csv and told us to visualize it. I froze up. This was unfamiliar territory, outside my ORM where
+I could do " [:code [:i "$object"] ".all.each"] " and iterate through it. I ended up spending the entire time allocated trying to hobble together a quick CSV to ORM library
+so I could work with the data in a manner that ORMs taught me to. I completely failed in doing that and ended up achieving nothing for that final round. It completely humbled
+my inflated ego from my first two wins."]
 
      [:p "At some point I read Paul Graham's "
       [:a {:href "https://www.paulgraham.com/avg.html"} "Beating the Averages"]
@@ -347,16 +349,22 @@ Both have their tradeoffs and merits, but SPAs exist for a good reason and provi
        {:src "/img/verbiage/why-clojure/data-better.webp"
         :caption "This is all you need"})]
 
-     [:p "While it's pretty cool that you can call code like " [:code "User.all"] ", coming from a background like I did means if there is no magical method on an object that did something, you're in hard mode territory."]
+     [:p "While it's pretty cool that you can call code like " [:code "User.all"] ", coming from an uneducated background like I did meant that if there is no method on an object in some
+library, I was in hard mode territory. I've seen this with myself and my fellow colleague working in Rails. The extreme convenience gave us initial speed but also made us incompetent and
+slow when we inevitably were required to push webapps past the boundaries of out of the box solutions."]
 
-     [:p "I cannot believe the amount of libraries in the Ruby ecosystem that exist just to call APIs of random SaaS products just to instantiate objects with just JSON data that are mapped to fields so a junior developer could use the dot operator."]
+     [:p "I cannot believe the amount of libraries in the Ruby ecosystem that exist just to call APIs of random SaaS products just to instantiate objects with just JSON data that are
+mapped to fields so a junior developer could use the dot operator."]
 
      [:p
       [:a {:href "https://www.youtube.com/watch?v=ShEez0JkOFw"} "A talk given by Tim Ewald"]
       " explains the power of clojure by comparing it with woodworking. I've watched this twice, the second time when I started woodworking as a hobby. This talk completely matches my experience developing software. Just like in my early days, I was able to spit out models and pages at blazing speed using generators and libraries that did all the heavy lifting. But simply doing something with raw CSV data made my brain hurt."]
 
      [:p "Being proficient with molding data by hand makes you capable of making extremely bespoke things."]
-     [:p "Since I've been using Clojure, I've transcended the limits of what I can achieve being contingent on whether or not a library or framework exists. This applies to any language, but Clojure's essence is strong data structures and core functions to manipulate them. You also have syntax irreducibility because it's a lisp and strong performance which allows me to run my web apps on cheap hardware. The ability to write code that compiles both on JVM and Javascript in the same file is superb for things like writing validation code once that works on both client side forms and backend."]
+     [:p "Since I've been using Clojure, I've transcended the limits of what I can achieve being contingent on whether or not a library or framework exists. This applies to any language,
+but Clojure's essence is strong data structures and core functions to manipulate them. You also have syntax irreducibility because it's a lisp and strong performance which allows me
+to run my web apps on cheap hardware. The ability to write code that compiles both on JVM and Javascript in the same file is superb for things like writing validation code once
+that works on both client side forms and backend."]
 
      [:p "This is why for at least business web applications, I will always default to Clojure when starting my own projects."]]}])
 
@@ -626,7 +634,7 @@ Remnants of it can be found on waybackmachine."]]
   (render
    [:div#projects.container
     [:h1 "Projects"]
-    [:p "The following are a list of notable projects I've created."]
+    [:p "The following are notable projects I've created."]
     [:p "Most of these I have developed completely myself with regards to frontend, backend, and deployment."]
     (into [:div.projects]
           (map (fn [{:keys [id title link tags desc thumb]}]
