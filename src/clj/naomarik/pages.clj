@@ -44,7 +44,6 @@
       [:html
        {:lang "en"}
        (-> [:head
-
             [:meta {:charset "UTF-8"}]
             [:link {:rel "canonical"
                     :href canonical}]
@@ -125,6 +124,8 @@ little until investment was secured and built things starting from the core prob
      [:p "I believe in building something people want that enhances their experience in life.
 Solving business problems in an impactful, robust way that lasts. Selling gimmicks and hype does not stand the test of time."]
      [:p "To more easily achieve the ever demanding need to mold software towards the requirements of reality, I have progressed from PHP to primarily using Clojure."]
+     [:p "I would consider myself a debugger more than anything else. When tasked with something I don't know how to do, I have a seemingly endless amount ways of tackling the problem from every angle.
+This has led me to be able to tackle objectives without direct help, building upon my experience to solve future problems and become better at scanning available resources to pinpoint exactly what I need."]
 
      (img-with-caption
       {:src "/img/aboot/bike.webp"
@@ -163,6 +164,108 @@ could decipher someone will be with you in 4 hours to answer your questions so g
 It was me, one Rails developer colleague, and the CEO. We were completely dumbfounded, having no idea what to do."]
      [:p "After waiting four hours the guy finally came to us also seemingly confused why he was there."]
      ]}
+
+
+
+   {:title "Throwing oneself at work"
+    :draft true
+    :date "tbd"
+    :slug "work"
+    :content
+    "
+I've noticed when people grow up and become obsessive about something, sometimes they are escaping something that traumatized them growing up. A cliche is the story of a successful entrepreneur who has worked exceptionally hard his way out of poverty. Another example are Youtubers Kitboga and CoffeeZilla, who have had family that were scammed so they became obsessed with exposing scammers.
+
+It's like a rubberband stretching far into one direction the person hates, then when a block is lifted that allows the person to finally act freely to solve their problems, it shoots off propelling itself into the opposite, disproportionately travelling into the opposite direction far further than it was originally stretched.
+
+I grew up with a single mother working fulltime. She did her best and provided well for my sister and myself, being part of upper middleclass. That also meant she wasn't around much to take care of us and that was left to daycares and babysitters. I spent an enormous amount of time growing up in situations I did not want to be in because I had no control over my environment. I always wanted to flee as fast as possible to
+
+I used to value speed over all else, but as I've become older, I've realized hitting a target faster doesn't necessarily lead to the bullseye. I now value plans and correctness more than raw execution speed
+because over time it leads to faster execution.
+
+
+Discipline <-> Pleasure, also Discipline -> Pleasure. Both a tug relationship and a push relationship where discipline can lead to pleasure. Enjoying discreet moments of life, cashing out on
+what you've worked for.
+
+Exerting will over someone.
+{:craziness-level ;; is someone willing to shoot you through their own foot, or in tekken yoshimitsu's attack where he stabs you through himself}
+
+:
+{:task
+{:goal ;; may not be to complete entire thing
+ :method ;; actual work being done
+}
+:plan
+:reward {}
+:motivation
+{
+:failure-consequences
+:life-purpose
+:what-this-provides
+:long-term-reward
+}
+:distractions {:internal #{:stress :upcoming-interruptions} :external }
+:engagement/working-on-task ;; whittle away at ability to execute
+{:task-fatigue
+:flow ;; execution momentum
+:mana ;; ?
+}
+:skill ;; modifies engagement, multiplier to frustration/task fatigue and flow. bell curve, strike a balance. too easy and too hard is negative
+:discipline ;; defense against distractions https://www.youtube.com/watch?v=0kIoZi3yxYk
+}
+;; apply this to real tasks and games
+
+
+;; mental state
+{:burnout {:short-term :long-term}
+:energy
+:discomfort
+
+}
+
+;; self-alignment
+{:ethics {:religious
+:culturual
+:self}}
+
+;; within
+{:perceived-importance
+:in-practice}
+
+
+Something about entertainment, movies, comedy, games to refill/reduce burnout.
+Something in here about being stubbornly stuck to a problem. maybe failure-consequence, with self inclination of not allowing a problem to win.
+
+Working on something you don't believe in can decrease an attribute adding to your burnout
+"}
+
+   {:title "Dev Environment Update"
+    :date "Sept 30 2024"
+    :slug "dev-env-update"
+    :content
+    [:div.content
+     [:p.preline
+      "I currently have two laptops: a 7th generation Lenovo Legion Slim 7i and a 16 inch M1 Max MacBook Pro. I've been using WSL2 within Windows for a few years using X410 for Doom Emacs. For some reason I do not reach for my MacBook even though in many ways it's the superior laptop. Speakers are better, the battery life is better, and my development tools are a bit snappier and more stable. Using WSL2, I often face glitches daily with my X410/Emacs setup where I have to stop my work because the shift key is permanently enabled or it'll just freeze.
+
+I think the main reason I don't like the Macbook is the feel of it. When I say think, it's hard to pinpoint why because the device just works, but something subconsciously repels me from using it. Typing on it compared to my Lenovo just feels cold, with sharp edges and not very tactile. My Lenovo's plastic construction never gets cold and the edges are chamfered so they don't dig into my wrists. The Mac's screen is also inferior being highly reflective, noticeable ghosting due to poor pixel response time, and half the time the scrolling through apps is noticeably 60hz despite 120hz 'Promotion' being perpetually enabled. The device also only has 512gb of storage with 32gb of ram and cost thousands of dollars when it was new. My Lenovo has 40gb of RAM and room for 2 SSDs so I've got a total of 3TB and was less than half the price.
+
+Through the use of AutoHotkey, Raycast, and Rectangle both have the same hotkeys that allow me to invoke my browser, editor, terminal and window management without using the mouse.
+
+MacOS at some point has become extremely annoying to me. From 2012-2018 it was my only option to get work done. At some point I was getting constant iCloud notifications that I could not disable.
+A default mac freshly unboxed is one of the worst computing experiences I've ever witnessed. Watching other people use it, clicking on the extremely small green button to maybe maximize or fullscreen a window and having 6 fullscreen programs open at once they have to swipe through with gestures. Watching a non technical person attempt to multitask on a Mac gives me a similar sensation of being helplessly stuck sitting in heavy traffic. Apple devices provide an austere experience that feel like they were made to upsell their iCloud subscription and other paid services. Everyone's used to it, but it's still insane to me that you have to pay them money to develop on their platform.
+
+Windows has its own issues. It feels like public transport where anyone is allowed to get on. Even after debloating it feels like the OS has things going with cpu spikes and random network activity. My power consumption on idle fluctuates wildly because every program has free reign to do what it wants and every major windows update is like a trojan horse for more services that run in the background that I don't know about. Inspecting the services and processes is unhelpful because the legitimate services that are harmless sound like poorly named viruses. With all the advertising and now Windows Recall being injected into everyone's veins constantly recording your screen it no longer feels like the operating system serves the operator.
+
+In the past several weeks I've dealt with a neverending stream of interruptions due to unavoidable life situations that has derailed my velocity in making meaningful progress for work, so I decided right before I get back into it I would try Linux on my Lenovo. The last time I installed linux on bare metal was 15 years ago and had a working Arch setup for about 3 months before an update broke everything.
+
+I deleted some games from Steam, used gparted from the Linux Mint live USB to shrink enough space to partition a drive and installation went smoothly. Out of the box sound wasn't working and my external 4k monitor was not able to run at 120hz. I solved my sound issues by updating my linux kernel to 6.11 and after adding some graphics ppa to install the proprietary nvidia 550 drivers my 4k monitor ran well at 120hz. My other major issue was the trackpad had no palm rejection, so when I typed anything I would constantly lose focus from wherever my cursor was making it completely unusable. I solved this by installing synaptic drivers and adding a deadzone to the edges. I also set up i3, something I've been wanting to try for the last decade. Configuration and the experience usage is a lot easier than I thought it would be, exceeding my expectations. I've never experienced multitasking on this level and haven't had the desire to boot back into Windows.
+
+The resource consumption is ridiculously low. A cold boot into i3 consumes no more than 1 gig of RAM and applications launch with no delay or animation lag. I never felt my computer was slow using Windows, but the gap in performance is actually very wide. Idle power consumption is very stable and low at 5w, no random spikes of CPU usage when not in use. i3's default status bar has a battery power consumption field that can be enabled and the system constantly falls back into minimal power consumption as soon as my hands are off the keyboard. This has never been the case for me in Windows.
+
+The other major thing I wasn't expecting is my laptop's sleep actually works. I've had at least a dozen moments I've thrown my laptop in my bag only to pull it out as if it's been in a toaster. I've tried every tweak to solve this because it's a known issue but nothing has worked. On Windows, if I wanted to go to a cafe I had to completely shut down to avoid any issues, which is a horrible laptop experience.
+
+ChatGPT was extremely helpful in configuration and pointing me to the correct programs and documentation to look up. I could hardly find anything useful with Google and has become more of a glorified address bar so I don't have to type out URLs.
+
+Something unexpected that I'm experiencing from my new setup is that my computer now feels like a device that is obedient, doing nothing clandestine. I'm no longer being advertised to, my computer is not wasting resources constantly performing background tasks I cannot observe. I don't have to worry about AI integration that I absolutely don't want. The operating system serves its operator and no one else."]]}
 
    {:title "Crowdstrike and the criticality of data validation in maintaining integrity in software systems"
     :date "June 26, 2024"
