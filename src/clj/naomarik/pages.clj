@@ -238,7 +238,32 @@ Something in here about being stubbornly stuck to a problem. maybe failure-conse
 Working on something you don't believe in can decrease an attribute adding to your burnout
 "}
 
-   {:title "Dev Environment Update"
+   {:title "Linux Desktop Assessment"
+    :date "October 07 2024"
+    :slug "linux-desktop-assessment"
+    :content
+    [:div.content
+     [:p.preline
+      "The point of this post is mainly to log my thoughts after looking into linux distros for a bit so I can remember why I made my decision to stick with Mint.
+
+NixOS: Looks cool to configure reproducible but people seem to struggle a lot with syntax. I don't have time for that. Also no FHS seems to have caused problems with people. Complaints about arcane error messages.
+Arch: I used this back in 2011 for about 3 weeks and an update broke my system. That still seems to be common. Also my servers all use apt and using pacman is horrible.
+Fedora: I'd rather use apt than dnf, but looks great if I wanted a Windows-like experience.
+Ubuntu: Don't want snaps, dislke their theme.
+Kubuntu: Apprently this is really good on resources, but still don't want snaps. Might be worth checking out.
+Zorin: The presence of a paid version makes the free version feel freemium. Not sure if this the case in practice. Supposed to be good and performant.
+MX Linux: Petty as the website looks ugly, but supposedly works well.
+Debian: Don't want to be stuck with old packages.
+PopOS: Theme looks nice, but installed it on an old laptop and performance was bad compared to mint.
+
+KDE at this point in time is beautiful but I don't need it due to maining i3.
+
+And the distro I chose to stay,
+Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
+
+Also I have no idea why libinput is succeeding synpatic and why no one seems to be doing anything about it. The touchpad experience is unusable with libinput, as if it has a polling rate of 25hz with no way to prevent accidental touches from typing and two finger scrolling hardly works. The synaptic experience surpasses my Macbook but could use some tweaks that don't seem to exist anywhere."]]}
+
+   {:title "macOS -> WSL2+Ubuntu -> Mint+i3"
     :date "Sept 30 2024"
     :slug "dev-env-update"
     :content
