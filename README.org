@@ -1,8 +1,8 @@
 #+title: naomarik.com
 
-
 * Dependencies
 ** Dev
 babashka, esbuild, sass
 ** Prod
 babashka
+sudo apt install webp

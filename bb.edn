@@ -18,6 +18,9 @@
                  :task (do (main/-main)
                            (deref (promise)))}
 
+         images {:doc "Build images"
+                  :task (shell "./convert.sh")}
+
          esbuild {:doc "Build js"
                   :task (shell "npx esbuild js/index.js --bundle --minify --outfile=build/js/index.min.js")}
 

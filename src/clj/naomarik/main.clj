@@ -48,8 +48,8 @@
        :headers {"Content-Type" "text/html"}
        :status 200}
 
-      [:get "/aboot" nil]
-      {:body (pages/aboot req)
+      [:get "/about" nil]
+      {:body (pages/about req)
        :headers {"Content-Type" "text/html"}
        :status 200}
 

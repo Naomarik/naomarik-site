@@ -22,10 +22,10 @@
                 [:a {:href href
                      :class (when (= page page*) "active")
                      } title])
-              [["/" (if (= @env/mode :dev) "/dev" "/home") :home]
+              [["/" (if (= @env/mode :dev) "/dev" "Home") :home]
                ["/projects" "Projects" :projects]
                ["/verbiage" "Verbiage" :verbiage]
-               ["/aboot" "Aboot" :aboot]])]))
+               ["/about" "About" :about]])]))
 
 (def ^:private css (slurp (io/file (str "build/css/style.css"))))
 
@@ -107,14 +107,14 @@
              :allowfullscreen true}]
    [:figcaption caption]])
 
-(defn aboot [req]
+(defn about [req]
   (render
-   [:div#aboot.container.small
-    [:h1 "Aboot"]
-    [:p "There's no doobt that you've landed on this aboot. If yar wondering who I am you've come to the right place."]
+   [:div#about.container.small
+    [:h1 "About"]
+    [:p "A small tidbit about myself."]
     [:section
      [:h2 "The Human"]
-     [:p "Love delicious food, video games, cycling, archery, and playing with my kids. Californian, Muslim since 2007."]
+     [:p "Love delicious food, video games, cycling, archery, and playing with my kids. Hobbies are always expanding. Californian, Muslim since 2007."]
      [:p "I'm a fairly private person publicly and don't do social media."]]
     [:section
      [:h2 "The Developer"]
@@ -128,13 +128,13 @@ Solving business problems in an impactful, robust way that lasts. Selling gimmic
 This has led me to be able to tackle objectives without direct help, building upon my experience to solve future problems and become better at scanning available resources to pinpoint exactly what I need."]
 
      (img-with-caption
-      {:src "/img/aboot/bike.webp"
+      {:src "/img/about/bike.webp"
        :caption "Remnants of my GSXR1000, an event that would set the trajectory I am on today"})]
     [:section
      [:h2 "The Site"]
      [:p "After exploring various static site generators, I decided to just make this from scratch with clojure. It's using http-kit and babashka, served behind nginx and Cloudflare."]
      [:a {:href "https://github.com/Naomarik/naomarik-site"} "source on Github"]]]
-   {:nav :aboot
+   {:nav :about
     :req req}))
 
 (def writing
@@ -238,7 +238,7 @@ Something in here about being stubbornly stuck to a problem. maybe failure-conse
 Working on something you don't believe in can decrease an attribute adding to your burnout
 "}
 
-   {:title "Linux Desktop Assessment"
+   #_{:title "Linux Desktop Assessment"
     :date "October 07 2024"
     :slug "linux-desktop-assessment"
     :content
@@ -252,16 +252,15 @@ Fedora: I'd rather use apt than dnf, but looks great if I wanted a Windows-like 
 Ubuntu: Don't want snaps, dislke their theme.
 Kubuntu: Apprently this is really good on resources, but still don't want snaps. Might be worth checking out.
 Zorin: The presence of a paid version makes the free version feel freemium. Not sure if this the case in practice. Supposed to be good and performant.
-MX Linux: Petty as the website looks ugly, but supposedly works well.
-Debian: Don't want to be stuck with old packages.
+MX Linux: Extremely light weight, no ubuntu repos.
+Debian: Old packages.
 PopOS: Theme looks nice, but installed it on an old laptop and performance was bad compared to mint.
 
 KDE at this point in time is beautiful but I don't need it due to maining i3.
 
 And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
-
-Also I have no idea why libinput is succeeding synpatic and why no one seems to be doing anything about it. The touchpad experience is unusable with libinput, as if it has a polling rate of 25hz with no way to prevent accidental touches from typing and two finger scrolling hardly works. The synaptic experience surpasses my Macbook but could use some tweaks that don't seem to exist anywhere."]]}
+"]]}
 
    {:title "macOS -> WSL2+Ubuntu -> Mint+i3"
     :date "Sept 30 2024"
@@ -275,8 +274,8 @@ I think the main reason I don't like the Macbook is the feel of it. When I say t
 
 Through the use of AutoHotkey, Raycast, and Rectangle both have the same hotkeys that allow me to invoke my browser, editor, terminal and window management without using the mouse.
 
-MacOS at some point has become extremely annoying to me. From 2012-2018 it was my only option to get work done. At some point I was getting constant iCloud notifications that I could not disable.
-A default mac freshly unboxed is one of the worst computing experiences I've ever witnessed. Watching other people use it, clicking on the extremely small green button to maybe maximize or fullscreen a window and having 6 fullscreen programs open at once they have to swipe through with gestures. Watching a non technical person attempt to multitask on a Mac gives me a similar sensation of being helplessly stuck sitting in heavy traffic. Apple devices provide an austere experience that feel like they were made to upsell their iCloud subscription and other paid services. Everyone's used to it, but it's still insane to me that you have to pay them money to develop on their platform.
+MacOS at some point has become extremely annoying to use. From 2012-2018 it was my only option to get work done. At some point I was getting constant iCloud notifications that I could not disable nagging me to upgrade my storage so I ended up just deleting everything it had synced altogether.
+A default mac freshly unboxed is one of the worst computing experiences I've ever witnessed. Watching other people use it, clicking on the extremely small green button to maybe maximize or fullscreen a window and having 6 fullscreen programs open at once they have to swipe through with gestures. Watching a non technical person attempt to multitask on a Mac gives me a similar sensation of being helplessly stuck sitting in heavy traffic. Apple devices provide an austere experience that is hard to break out of. Everyone's used to it, but it's still insane to me that you have to pay them money to develop on their platform.
 
 Windows has its own issues. It feels like public transport where anyone is allowed to get on. Even after debloating it feels like the OS has things going with cpu spikes and random network activity. My power consumption on idle fluctuates wildly because every program has free reign to do what it wants and every major windows update is like a trojan horse for more services that run in the background that I don't know about. Inspecting the services and processes is unhelpful because the legitimate services that are harmless sound like poorly named viruses. With all the advertising and now Windows Recall being injected into everyone's veins constantly recording your screen it no longer feels like the operating system serves the operator.
 
@@ -439,7 +438,7 @@ but ~150ms latency is very perceptible."]
      [:p "I could have with just as little effort made this site a snappy SPA but decided against it for optimal search engine compatibility.
 Both have their tradeoffs and merits, but SPAs exist for a good reason and provide the optimal experience if done right."]
      [:p "To see everything this site is doing, you can find the source in the "
-      [:a {:href "/aboot"} "Aboot"] " page"]]}
+      [:a {:href "/about"} "Aboot"] " page"]]}
 
    {:slug "why-clojure"
     :title "Clojure for the past 9 years and forseeable future"
@@ -513,7 +512,7 @@ that works on both client side forms and backend."]
   (render
    [:div#verbiage.container.small
     [:h1 "Verbiage"]
-    [:p "Where letters are spewed forth aboot random topics"]
+    [:p "Where letters are spewed forth about random topics"]
     (into [:div.entries]
           (map (fn [{:keys [title date slug]}]
                  [:div.entry
