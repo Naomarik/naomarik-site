@@ -239,12 +239,12 @@ Working on something you don't believe in can decrease an attribute adding to yo
 "}
 
    #_{:title "Linux Desktop Assessment"
-    :date "October 07 2024"
-    :slug "linux-desktop-assessment"
-    :content
-    [:div.content
-     [:p.preline
-      "The point of this post is mainly to log my thoughts after looking into linux distros for a bit so I can remember why I made my decision to stick with Mint.
+      :date "October 07 2024"
+      :slug "linux-desktop-assessment"
+      :content
+      [:div.content
+       [:p.preline
+        "The point of this post is mainly to log my thoughts after looking into linux distros for a bit so I can remember why I made my decision to stick with Mint.
 
 NixOS: Looks cool to configure reproducible but people seem to struggle a lot with syntax. I don't have time for that. Also no FHS seems to have caused problems with people. Complaints about arcane error messages.
 Arch: I used this back in 2011 for about 3 weeks and an update broke my system. That still seems to be common. Also my servers all use apt and using pacman is horrible.
@@ -261,6 +261,49 @@ KDE at this point in time is beautiful but I don't need it due to maining i3.
 And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
 "]]}
+
+   {:title "My thoughts on AI/LLMs"
+    :date "Nov 7, 2024"
+    :slug "ai-thoughts"
+    :content
+    [:div.content
+     [:p.preline
+      "With frameworks, basic CRUD apps have been extremely easy to build for a very long time. I jumped into Rails in my second year programming and was able to throw MVPs together in no time. Libraries exist for almost everything you'd want to do. It just becomes a matter of gluing code together to build something. One of the best resources at the time was Railscasts, a long running series with more than 400 videos showing exactly how to consume libraries to do various tasks.
+
+While I was working in Rails, I noticed quickly that the problem space my colleagues and I could solve were dependent on the libraries that were available. This only became an issue for me when I started trying to do more complicated things. I would routinely see my colleagues being able to discuss what's possible with the CEO on their knowledge of the libraries and frameworks they used, and it was extremely limiting. I remember my first challenge that did not have a library available was figuring out how to create a chat bot that acted in a very specific way and could branch to different conversation paths dependending on what your answers were and validate input.
+
+A novice programmer would just use cond/if/else branches and conversation paths get more complicated, it becomes an enormous mess very fast and prone to errors.
+
+I intuitively knew there was a better way, but had no idea how to reach it. It took me about two weeks of bashing my head against the problem to be able to build a map of nodes that described various branches and what triggered their conditions. This allowed me to rapidly build any chat bot I wanted which helped my cofounder and me immensely in securing projects at the time. The best bang for the buck I got was a bot I delivered for a semi-government department that we got 80k for with less than one week of work. It came with a backend that would list all entries completed and used both Twitter DMs and Telegram to consume the same conversation data structure. This was demo'd prominently at their large booth at GITEX.
+
+When asking AI for code, you can be as specific or vague as you want. If you're non technical you won't even know when you're being vague. You can ask to code a full program or a specific piece to generate algorithm to manipulate data to your requirements. This is can be both extremely beneficial and harmful.
+
+The benefits come when you're making easy things. Since these LLMs are trained on public (hehe) data, it's great for spitting out code that has been solved thousands of times before.
+
+In the short term, you reap rewards of getting more done quickly. In the long run, you end up with a poorly engineered codebase with no architectural oversight. Since many people were bad at programming before generative AI, this isn't really a big problem. The barrier to entry to building things has been significantly lowered now for most people which is great. So low that one of the most insane things I stumbled upon was an indie dev who managed to monetize react-toast notifications as a SaaS.
+
+Here's where I see the problem though. If you don't need to think much about the problem you're solving, you lose problem solving abilities. A lot of coding for people relying on AI becomes a back and forth of giving it error messages for the code it just spat out.
+
+Just like the components of an automobile, the components of a codebase have to interact with each other. Imagine a car where the air conditioner was built in complete isolation, requiring its own power source instead of tapping into the power system of the car. As a driver of the car you might not know or care, but as more components are built like this, it leads to an extremely poorly designed vehicle that cannot leverage its own system.
+
+This is analogous to technical debt in codebases, and without oversight of an experienced software architect, you'll end up with a lot of bloat, jank, and poor performance in the long run since nothing is composed together very well. When it comes time to solve a performance issue or tweak a feature ever so slightly due to changing requirements, you might have to rewrite the entire thing which can break other pieces of the system and might not manifest itself until specific conditions are met.
+
+The state of a running running web platform is highly dependent on the data that flows through it, and once a platform is launched and starts populating a database with records of user accounts, billing information, and everything else, the platform needs to be able to gracefully handle that data forever.
+
+This can only be done when the people working on the platform can hold a conceptual model of the entire context of the platform the part of the system being worked on if the implementation details are isolated well enough from its public APIs.
+
+The idea that AI will completely replace programmers is nonsense and will never happen. If that's the case, the non technical CEO of a company no longer needs a CTO, or project managers, because they can just describe what they want and get it. That won't happen because the output prompting an LLM with few sentences will generate pages of code that still has to be compiled or interpreted by the computer which is nuanced precisely as instructions with no ambiguity, but ambiguity is inherent in the intent due to the generative nature of this action. This ambiguity of intention will cause unforeseen problems in the future, especially when trying to iterate on an existing codebase.
+
+Awhile back I was pairing with a programmer that had copilot enabled in VSCode and as he typed it would autocomplete large swathes of code that completely distracted us from our intentions, like a know it all constantly trying to blurt out what you're going to say before you've finished your sentence. If this is useful to anyone, they're not really good to begin with or using a poor language/framework that requires too much boilerplate ceremony.
+
+The biggest advantage I've come to get from AI is that it has reduced friction immensely in working in other languages I'm not familiar with. Instead of looking up syntax, I can quickly ask for a quick example. It has essentially become what Google has used to be back when search results weren't encrappified.
+
+It has also been extremely useful in learning things or getting a curriculum of what to look up when I'm asking for something far outside my knowledge.
+
+I've had moments where I've attempted to use it in lieu of using my problem solving skills and I've never ended up with anything useful. This is due to experience I have and having a strong opinion on how things should be, so I'm much faster at just writing the code I intend in the first place.
+
+In conclusion, I would have never imagined computers were capable of giving us this. I think it's extremely beneficial when you know its tradeoffs, but good luck to anyone inheriting a codebase that was generated with wide and vague intentions. Robotic factories have largely replaced the human assembly line, but mechanics and their knowledge are still required to fix automobiles. If used all the time as a crutch, one will lose the ability to walk."]]
+    }
 
    {:title "macOS -> WSL2+Ubuntu -> Mint+i3"
     :date "Sept 30 2024"
