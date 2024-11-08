@@ -114,25 +114,23 @@
     [:p "A small tidbit about myself."]
     [:section
      [:h2 "The Human"]
-     [:p "Love delicious food, video games, cycling, archery, and playing with my kids. Hobbies are always expanding. Californian, Muslim since 2007."]
-     [:p "I'm a fairly private person publicly and don't do social media."]]
+     [:p "Love delicious food, video games, cycling, archery, FPV drones, woodworking, and playing with my kids. Hobbies are always expanding and would love to be a pilot of my own small private airplane and amateur racecar driver one day. Californian, Muslim since 2007."]
+     [:p "I'm a fairly private person publicly and don't do social media, but very transparent and open to people in real life."]]
     [:section
      [:h2 "The Developer"]
-     [:p "I've been doing fullstack development since 2011, working directly with CEO types before that title means anything to either of us. I've taken a lot of advice to
-heart from Paul Graham, reading his essays since 2014 trying to make this startup thing work for myself. I've experienced the highs and lows of startup life multiple times, survived on
-little until investment was secured and built things starting from the core problem outwards."]
-     [:p "I believe in building something people want that enhances their experience in life.
-Solving business problems in an impactful, robust way that lasts. Selling gimmicks and hype does not stand the test of time."]
+     [:p "I've been doing fullstack development since 2011, working directly with CEO types before that title means anything to either of us. I've taken a lot of advice to heart from Paul Graham, reading his essays since 2014 trying to make this startup thing work for myself. I've experienced the highs and lows of startup life multiple times, survived on little until investment was secured and built things starting from the core problem outwards."]
+     [:p "This profession was something I kind of just fell into, being able to fit my non routine life, rotating sleep schedule, and extreme distaste for sitting in traffic for a commute."]
+     [:p "I believe in building something people want that enhances their experience in life. Solving business problems in an impactful, robust way that lasts. Selling gimmicks and hype does not stand the test of time."]
      [:p "To more easily achieve the ever demanding need to mold software towards the requirements of reality, I have progressed from PHP to primarily using Clojure."]
-     [:p "I would consider myself a debugger more than anything else. When tasked with something I don't know how to do, I have a seemingly endless amount ways of tackling the problem from every angle.
-This has led me to be able to tackle objectives without direct help, building upon my experience to solve future problems and become better at scanning available resources to pinpoint exactly what I need."]
+     [:p "While I'm not in love with programming in general, I get addicted to overcoming challenging problems I'm faced with, stubbornly and relentlessly. It's impossible to reach a skill ceiling in this profession where there's nothing left to learn, unlike a few menial jobs I've painfully experienced in my youth."]
+     [:p "I would consider my core strength as a troubleshooter more than anything else. I'm intellectually honest with myself and others. When tasked with something I don't know how to do, I have a seemingly endless amount ways of tackling the problem from every angle. This has led me to be able to tackle objectives without direct help, building upon my experience to solve future problems and become better at scanning available resources to pinpoint exactly what I need."]
 
      (img-with-caption
       {:src "/img/about/bike.webp"
        :caption "Remnants of my GSXR1000, an event that would set the trajectory I am on today"})]
     [:section
-     [:h2 "The Site"]
-     [:p "After exploring various static site generators, I decided to just make this from scratch with clojure. It's using http-kit and babashka, served behind nginx and Cloudflare."]
+     [:h2 "This Site"]
+     [:p "After exploring various static site generators, I decided to just make this from scratch with clojure. It's using http-kit and babashka, served behind nginx and Cloudflare. This will allow me to expand it to anything I want, even if the starting point doesn't do much and blogging isn't very ergonomic."]
      [:a {:href "https://github.com/Naomarik/naomarik-site"} "source on Github"]]]
    {:nav :about
     :req req}))
@@ -162,9 +160,7 @@ Twitter account and receive responses like their account balance or last five tr
      [:p "They first wanted to see if we were technically capable of doing such a thing, so they invited us to bring a computer into their main office and proudly presented us with an ethernet cable to plug into their network, gave us a piece of paper with some IP address and some instructions that none of us
 could decipher someone will be with you in 4 hours to answer your questions so good luck.
 It was me, one Rails developer colleague, and the CEO. We were completely dumbfounded, having no idea what to do."]
-     [:p "After waiting four hours the guy finally came to us also seemingly confused why he was there."]
-     ]}
-
+     [:p "After waiting four hours the guy finally came to us also seemingly confused why he was there."]]}
 
 
    {:title "Throwing oneself at work"
