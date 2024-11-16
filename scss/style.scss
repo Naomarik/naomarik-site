@@ -198,7 +198,14 @@ nav {
   padding-top: 30px;
 }
 
+#post {
+  h2 {
+    margin-bottom: 0px;
+  }
+}
+
 #verbiage {
+
   .entries {
     display: grid;
     gap: 18px;
@@ -274,5 +281,4 @@ nav {
 
 .preline {
   white-space: pre-line;
-
 }

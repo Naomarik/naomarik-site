@@ -6,8 +6,6 @@
    [clojure.java.shell :as sh]
    [hiccup2.core :as hic]))
 
-
-
 (defn -image-dims [path]
   (let [path (format "resources/build/%s" path)]
     (edn/read-string (:out (sh/sh "./webpimagesize" path)))))
@@ -257,6 +255,67 @@ KDE at this point in time is beautiful but I don't need it due to maining i3.
 And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
 "]]}
+
+   {:title "Inexcuse of willful ignorance"
+    :date "Nov 16, 2024"
+    :slug "inexuse-of-ignorance"
+    :content
+    [:div.content
+     [:p.preline
+      " When I was 21 I researched Islam with the intent to show Muslims how wrong they were about their religion and to free people from wasting their time praying 5 times a day.
+
+It was very strange to me moving to UAE that people could do something 5x daily for their religion INCLUDING waking up in the morning to pray before the sun rises and fasting during the day for entire month. Yet these people were sane and did not seem cult-like at all. They were also extremely diverse and decentralized, no one was following a living single scholar, imam, or famous person that profited from them.
+
+My research and my agnosticism at the time was very one sided, I had solely consumed information criticizing religion from prominent anti-religion people. I had many debates with people parroting the rhetoric and arguments unsuccessfully. At one point something clicked and I decided to read the texts Muslims read so I can dismantle their arguments. and started researching what Muslims actually believe, starting with books talking about the Quran.
+
+I went from hating religion and Islam in particular to declaring my shahada and immediately praying 5x a day within the span of a week of intensive research. My mind was so blown at the time that I couldn't sleep for a week. I lived my life with the strong belief that the definition and concept of God was not provable. My world had flipped and it was (and still is) as distinct as black and white to me that God does exist and the Quran is the unaltered latest revision of his message to us."]
+
+     [:h2 "Worship and Character"]
+     [:p.preline
+      "I've now been a Muslim for about 19 years and have not missed a single prayer to my knowledge other than the time I was recovering in the ICU critically injured in a motorcycle accident. I wake up every single day for fajr very rarely sleeping through an alarm. If I am awake all night I ensure that I stay awake longer to not miss it.
+
+Prayers are fundamental and basic, every Muslim knows this.
+
+There are other fundamental things that require basic knowledge of Islam that comes from reading Quran, listening to lectures, and asking scholars questions when matters are not clear.
+
+One of the major things I had no idea about when it came to Islam is that as important as it is to pray, it is critically important how we deal with others in this world. It is also critical on how we conduct business transactions and what industries we can work in.
+
+Before entering Islam, I knew that a Muslim, someone who feared God that they cannot see to pray 5x a day, has enough conviction to abstain from what Islam prohibits.
+
+In an ideal world that would be it, but Islam understands that sin is built into human nature and that door to repentance doesn't require more than genuinely sincerely asking Allah for forgiveness with the intention to not fall back into the same sin, even if it occurs as a cycle."]
+
+     [:h2 "Riba"]
+     [:p.preline
+      "In the Quran 2:275, Allah says those who persist in Riba will be in hellfire forever. I had no idea what riba was until confronted with fintech jobs opportunities as a developer. From my understanding \"interest\" was riba and that was it. The amount of Muslims who take riba so lightly is mind blowing to me, because this is such a critical thing to avoid. I've read papers written by so-called Islamic Finance Experts with beards permitting riba under specific circumstances while providing zero proof from the Quran and Sunnah. The reality is Allah did not make understanding the pitfalls of riba hard to understand. You don't need a degree to understand how to avoid war with Allah and his messenger 2:279, and many answers from scholars are readily available.
+
+There's a ton of resources online about this explained in depth with examples, but as a general rule if you're making money with money, or like for like, and there is no intermediary transaction, that's riba. An example given if you trade 5kg of subpar dates for 1kg of good dates oops you've fallen into riba. Instead 5kg of dates should have been sold for money or something else and then 1kg purchased with those earnings.
+
+There is also no such thing as late fees as this is clear riba, and every single hadith that talks about loans is on the extreme side of leniency to the person in debt when possible.
+
+If you've somehow avoided credit cards your entire Muslim life like I did I'd still recommend you educate yourself on riba so yourself or your loved ones don't end up destroying their akhira unintentionally."]
+
+     [:h2 "Shirk"]
+     [:p.preline
+      "This is a pretty deep topic, in my opinion only due to the extremely sinister and sneaky ways the shaitan trick others on how to fall into this major sin, and I'd recommend just reading the Quran reguarly with reflection to iterate on your ability to think about this for yourself. In general, Allah is the only one to be worshipped, and absolutely NO one and NOTHING has the ability to harm and benefit you without Allah permission, so do not supplicate to anyone other than Allah and don't ascribe Allah's attributes to anything else."]
+
+     [:h2 "Family Issues"]
+     [:p.preline
+      "Life happens, people get offended, and while there are genuinely abusive scenarios that people should distance themselves from, cutting ties with family has been explicitly forbidden.
+There's immense power and stability when family ties are strong and well maintained. Many years ago I was visiting someone and a man much older than me asked me how my mother is doing, knowing she's halfway across the world from me. I told him I don't know, I haven't spoken to her in awhile. He relentlessly told me how important it was that I call her and my father regularly and how technology today makes this so easy. Soliciting advice like this isn't easy or comfortable as it tends to lead to arguments, but I was extremely grateful for this. Islam teaches that the most important people in an individual's life is their mother followed by their father."]
+
+     [:h2 "Backbiting"]
+     [:p.preline
+      "This is one of the most difficult things to overcome, even for me as it's so pervasive. It is very difficult to have conversations about people without falling into this but I'm blessed enough to have specific people in my life who have been great examples on where to draw the boundary. If you ever come across someone who does not backbite, you'll notice that they are magnetic and extremely pleasant to be around. As tantalizing as juicy gossip is, subconsciously I think we all feel the disgust when we are putting down other people outside of their presence for no reason. There are reasons to talk about other people though, especially if someone comes to you entering a long deep relationship such as marriage or business partnerships where the truth should be presented in a respectful manner to prevent harm on befalling the unsuspecting.
+
+
+
+Unfortunately people get offended by the truth if it conflicts with their current lifestyle or desires and Muslims are no exception. I am immune to this because I have accepted that whatever my discomfort or pain my ego feels is completely irrelevant if it's going to lead to divine punishment. I want to be clear also that I'm nowhere near perfect and can do a ton of acts of worship much better and more frequently. Everyone should take regular intervals without any distractions to reflect on their life and their level of intellectual honesty, ensuring they have not fallen into mental gymnastics to permit the haram, especially critically major sins like riba and shirk.
+
+As for everything in this post. Don't believe me. Do your own research to verify if what I said is true. This is the stance I take for all new information I come across that has the potential to benefit or harm me.
+
+I think confirmation bias is not always a bad trait humans have because moments in life where people become self reflective and do research to form their identity and religious beliefs should not be so easily free to change like a feather blowing in the wind. There are pivotal moments in life people can properly self reflect and assess their beliefs and those moments don't happen every day.
+
+Do not outsource your critical thinking to anyone else."]]}
 
    {:title "My thoughts on AI/LLMs"
     :date "Nov 7, 2024"
