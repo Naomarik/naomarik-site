@@ -309,7 +309,7 @@ There's immense power and stability when family ties are strong and well maintai
 
 
 
-Unfortunately people get offended by the truth if it conflicts with their current lifestyle or desires and Muslims are no exception. I am immune to this because I have accepted that whatever my discomfort or pain my ego feels is completely irrelevant if it's going to lead to divine punishment. I want to be clear also that I'm nowhere near perfect and can do a ton of acts of worship much better and more frequently. Everyone should take regular intervals without any distractions to reflect on their life and their level of intellectual honesty, ensuring they have not fallen into mental gymnastics to permit the haram, especially critically major sins like riba and shirk.
+Unfortunately people get offended by the truth if it conflicts with their current lifestyle or desires and Muslims are no exception. I am immune to this because I have accepted that any discomfort or pain my ego feels is completely irrelevant if it's going to lead to divine punishment. I'm nowhere near perfect and there's an enormous room for improvement with regards to my own acts of worship and how I deal with people. Everyone should take regular intervals without any distractions to reflect on their life and their level of intellectual honesty, ensuring they have not fallen into mental gymnastics to permit the haram, especially critically major sins like riba and shirk.
 
 As for everything in this post. Don't believe me. Do your own research to verify if what I said is true. This is the stance I take for all new information I come across that has the potential to benefit or harm me.
 
