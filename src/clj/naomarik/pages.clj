@@ -351,9 +351,9 @@ The idea that AI will completely replace programmers is nonsense and will never 
 
 Awhile back I was pairing with a programmer that had copilot enabled in VSCode and as he typed it would autocomplete large swathes of code that completely distracted us from our intentions, like a know it all constantly trying to blurt out what you're going to say before you've finished your sentence. If this is useful to anyone, they're not really good to begin with or using a poor language/framework that requires too much boilerplate ceremony.
 
-The biggest advantage I've come to get from AI is that it has reduced friction immensely in working in other languages I'm not familiar with. Instead of looking up syntax, I can quickly ask for a quick example. It has essentially become what Google has used to be back when search results weren't encrappified.
+The biggest advantage I've come to get from AI is that it has reduced friction immensely in working in other languages I'm not familiar with. Instead of looking up syntax, I can ask for an small example. It has sort of become what Google used to be back when search results weren't encrappified.
 
-It has also been extremely useful in learning things or getting a curriculum of what to look up when I'm asking for something far outside my knowledge.
+It has also been extremely useful in learning new things and getting an idea of what to look up when I'm asking for something far outside my knowledge.
 
 I've had moments where I've attempted to use it in lieu of using my problem solving skills and I've never ended up with anything useful. This is due to experience I have and having a strong opinion on how things should be, so I'm much faster at just writing the code I intend in the first place.
 
