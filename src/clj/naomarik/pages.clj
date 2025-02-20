@@ -109,14 +109,15 @@
   (render
    [:div#about.container.small
     [:h1 "About"]
-    [:p "A small tidbit about myself."]
+    [:p "A small tidbit about myself..."]
     [:section
-     [:h2 "The Human"]
-     [:p "Love delicious food, video games, cycling, archery, FPV drones, woodworking, and playing with my kids. Hobbies are always expanding and would love to be a pilot of my own small private airplane and amateur racecar driver one day. Californian, Muslim since 2007."]
-     [:p "I'm a fairly private person publicly and don't do social media, but very transparent and open to people in real life."]]
+     [:h2 "Me"]
+     [:p "Love delicious food, video games, cycling, archery, FPV drones, woodworking, and playing with my kids. Californian, Muslim since 2007."]
+     [:p "I'm a fairly private person publicly and not very active on social media, but very transparent and open to people in real life."]
+     [:p "Mainly trying my best to be accepted into Firdaws."]]
     [:section
-     [:h2 "The Developer"]
-     [:p "I've been doing fullstack development since 2011, working directly with CEO types before that title means anything to either of us. I've taken a lot of advice to heart from Paul Graham, reading his essays since 2014 trying to make this startup thing work for myself. I've experienced the highs and lows of startup life multiple times, survived on little until investment was secured and built things starting from the core problem outwards."]
+     [:h2 "My Career"]
+     [:p "I've been doing fullstack development since 2011, working directly with CEO types before that title means anything to either of us. Experienced the highs and lows of startup life multiple times. I tend to build things starting from the core problem outwards, solving the hardest problems first."]
      [:p "This profession was something I kind of just fell into, being able to fit my non routine life, rotating sleep schedule, and extreme distaste for sitting in traffic for a commute."]
      [:p "I believe in building something people want that enhances their experience in life. Solving business problems in an impactful, robust way that lasts. Selling gimmicks and hype does not stand the test of time."]
      [:p "To more easily achieve the ever demanding need to mold software towards the requirements of reality, I have progressed from PHP to primarily using Clojure."]
