@@ -256,6 +256,36 @@ KDE at this point in time is beautiful but I don't need it due to maining i3.
 And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
 "]]}
+   {:title "Updated thoughts on AI/LLMs"
+    :date "March 24, 2025"
+    :slug "updated-ai-thoughts"
+    :content
+    [:div.content
+     [:p.preline
+      "
+NOTE: Rough Draft -- will revise later
+
+At some point these have started to become useful to unleash in my codebase.
+Since my last post about this, I've tried cursor, claude code, aider, and of course been using the web based interfaces.
+
+The best way to get utility from these is to get a feeling about what they're capable of through using them. Sometimes they save you enormous time by generating large swathes of code. Sometimes they just waste your time creating a bowl of spaghetti you need to toss.
+
+Knowing where to unleash them, what to say, and which model to use for a given task is going to give the most gains.
+
+One great thing I found is that they have become pretty good for generating UX. Bolt/Lovable/Replit are all basically free UX designers now. Even web based claude sonnet 3.7 has given me things I've implemented in my webapp.
+
+The gains are pretty enormous if you know how to assess the output and not let technical debt build up.
+
+
+Hoping that within a few years, we will have the equivalent of today's sonnet 3.7 and DeepSeek R1 that can run at a decent speed locally on a laptop.
+
+My enthusiasm has peaked today when from an experience I just had telling emacs aider to create a react native screen based on my web app code, and it did most of it very well. I didn't even load up the CSS in the context, but I'm assuming it used it because it managed to nail down most of the design.
+
+I also just updated the landing page on MotorSaif yesteday to be a blend I got from both lovable and bolt, and I paid nothing for it.
+
+Currently I feel the various models will get you 60% there if you want something specific, and you have to know how to do the other 40%. My experience so far is that if I keep prompting to attempt to get the other 40%, it gets ugly very fast.
+"]]
+    }
 
    {:title "Inexcuse of willful ignorance"
     :date "Nov 16, 2024"
