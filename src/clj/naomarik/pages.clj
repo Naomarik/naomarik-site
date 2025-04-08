@@ -256,16 +256,43 @@ KDE at this point in time is beautiful but I don't need it due to maining i3.
 And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
 "]]}
+
+   {:title "Wealth, Fame, and Authenticity"
+    :date "April 8, 2025"
+    :slug "fame"
+    :content
+    [:div.content
+     [:p.preline
+      "Minor rant
+
+I absolutely loathe how wealth and fame can blind people on determining whether someone is authentic or not.
+
+There are countless examples now of people being exposed by the masses. People who I have never respected because I saw through their inauthentic portrayals of who they claim to be due to their actions and not weighing at all whether they are wealthy or not.
+
+Someone's actions and commitment to be true to their words should determine integrity, not how many millions of followers or dollars they have.
+
+Take this example: A lone person who can hardly string together an eloquent sentence that claims to have the domain collective expertise of several fields that people can only master over a lifetime. He promises much but fails to deliver anything. They have time to appear on countless interview and television skits. Deemed authentic by the masses due to the size of his bank account, even though he was exposed as a fraud continuously for more than a decade.
+
+To preface what I will write below with my usage of red flags is that they are not blanket statements to immediately negate someone's authenticity, rather it is a means to be more critical and cautionary in judging someone.
+
+Fame is a huge red flag for me, especially from those who are religious, and especially from those who are Muslims. I've seen over and over again religious leaders being exposed for not practicing what they preach yet still maintain an enormous loyal audience even though the evidence of their misdeeds, misconduct, or even misguidance is on full display to review.
+
+Extreme charisma is also a huge red flag for me and I've learned this the hard way. In video games you boost this stat and you're able to just talk your way into getting whatever you want even if you're not giving something of equal value. Unfortunately the same holds true for real life. You're doing the guy a favor because you like him, yet once he's done with you no favors have been returned and you gradually come to the realization that you've been swindled and incurred a net loss. Charisma will exponentially multiply someone's fame and a person who does not fear Allah will definitely wield their charm to vampirically suck time and value out of their victims.
+
+For the longest time I could never comprehend the hadith about Dajjal will come and countless people will follow him. Muslims will follow him despite having a complete description to make it impossible to mistake him for anyone else, yet somehow people speculate that Dajjal is not a real person but an idealogy or technology. Many people today fall for people far less than impressive than Dajjal who will have all the fame, all the wealth, and all the miracles.
+
+Judge someone by their actions and how well they commit to their word, not their carefully crafted image. Cultivate your skepticism skills now. We're living in an age of propaganda, scams, and lies.
+
+This rampant blind trust in people who have violated who they claim to be deserve no one's attention and is extremely harmful."]]}
+
    {:title "Updated thoughts on AI/LLMs"
     :date "March 24, 2025"
+    :updated "April 8, 2025"
     :slug "updated-ai-thoughts"
     :content
     [:div.content
      [:p.preline
-      "
-NOTE: Rough Draft -- will revise later
-
-At some point these have started to become useful to unleash in my codebase.
+      "At some point these have started to become useful to unleash in my codebase.
 Since my last post about this, I've tried cursor, claude code, aider, and of course been using the web based interfaces.
 
 The best way to get utility from these is to get a feeling about what they're capable of through using them. Sometimes they save you enormous time by generating large swathes of code. Sometimes they just waste your time creating a bowl of spaghetti you need to toss.
@@ -276,7 +303,6 @@ One great thing I found is that they have become pretty good for generating UX. 
 
 The gains are pretty enormous if you know how to assess the output and not let technical debt build up.
 
-
 Hoping that within a few years, we will have the equivalent of today's sonnet 3.7 and DeepSeek R1 that can run at a decent speed locally on a laptop.
 
 My enthusiasm has peaked today when from an experience I just had telling emacs aider to create a react native screen based on my web app code, and it did most of it very well. I didn't even load up the CSS in the context, but I'm assuming it used it because it managed to nail down most of the design.
@@ -284,6 +310,18 @@ My enthusiasm has peaked today when from an experience I just had telling emacs 
 I also just updated the landing page on MotorSaif yesteday to be a blend I got from both lovable and bolt, and I paid nothing for it.
 
 Currently I feel the various models will get you 60% there if you want something specific, and you have to know how to do the other 40%. My experience so far is that if I keep prompting to attempt to get the other 40%, it gets ugly very fast.
+
+Update a few weeks after writing the initial post:
+
+A lot of the code generated had to be heavily manually refactored. While it was really interesting being able to \"see\" something right away, the ergonomics of maintenance and adding more features was completely missing.
+
+I'm still using it for things here and there, but mainly keeping it on web based chat instead of using them directly in my IDE.
+
+As my project becomes more mature, it is becoming less and less useful and in order to be able to actually pinpoint and maintain my software in prod by providing hotfixes and growing features in a timely manner, I need things to be done in a specific way.
+
+I'm using it more focused laser-like instead of letting it generate larger pieces, with the complete understanding of every line that gets inserted.
+
+This is an enormous time saver but can also be a foot gun if wielded improperly, and only experience will let one know whether he's about to ship an injured foot into prod.
 "]]
     }
 
