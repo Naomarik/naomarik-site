@@ -267,7 +267,7 @@ Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has 
 
 I absolutely loathe how wealth and fame can blind people on determining whether someone is authentic or not.
 
-There are countless examples now of people being exposed by the masses. People who I have never respected because I saw through their inauthentic portrayals of who they claim to be due to their actions and not weighing at all whether they are wealthy or not.
+There are countless examples now of people being exposed for their fraud. People who I have never respected because I saw through their inauthentic portrayals of who they claim to be due to their actions recorded publicly on full display and not weighing at all whether they are wealthy or not.
 
 Someone's actions and commitment to be true to their words should determine integrity, not how many millions of followers or dollars they have.
 
