@@ -272,8 +272,8 @@ Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has 
 Here's a summary:
 - 114 Chapters in Quran
 - 57 are odd, 57 are even in terms of count of verses in each chapter.
-- Taking all even chapters, if you take each chapter that has an even number of verses, add its chapter number to itself, and sum the all 57 up, you get the total number of verses that the Quran contains. 6236
-- Do the same for odd chapters and you get a number that is the sum of adding every number from 1-114, the total amount of chapters in the Quran. 6555
+- Take all chapters that have an even number of verses, add its chapter number to its (even) verse count, and sum all that up for all 57 even chapters, you get the total number of verses that the Quran contains -- 6236
+- Do the same for odd chapters and you get a number that is the sum of adding every number from 1-114, the total amount of chapters in the Quran -- 6555
 
 The implication of this if it's not obvious is that if a single verse were to be added or removed anywhere none of the above will hold true. The verse counts are tied to the chapter its contained in which is tied to the total verse counts, which is also tied to how many chapters there are. All these numbers are tied together. If you were to attempt to achieve something like this again you would have need a completely different book and it would most certainly be designed from the ground up with the primary intention of achieving a mathematical balance.
 
@@ -309,7 +309,9 @@ The pattern you’ve verified is mathematically accurate based on standard Quran
 Probability≈extremely low (e.g., 10−38 or less)
 
 
-Original Comment:
+
+
+Original Reddit comment:
 
 Well. I was hoping to disprove this cause someone previously claimed some math miracle in the Quran but it required removing some suras/ayat or something. Just google \"math quran assassin\" you'll find the guy. He made some grand claims that got everyone excited but turned out to be false, then someone killed him.
 
@@ -359,10 +361,7 @@ So here it is. Pretty crazy! The Quran has its own built in checksum for verse a
 
 I wouldn't believe it if I couldn't verify it myself.
 
-الحَمْد لله
-
-
-"]]}
+الحَمْد لله"]]}
 
    {:title "Wealth, Fame, and Authenticity"
     :date "April 8, 2025"
@@ -379,6 +378,8 @@ There are countless examples now of people being exposed for their fraud. People
 Someone's actions and commitment to be true to their words should determine integrity, not how many millions of followers or dollars they have.
 
 Take this example: A lone person who can hardly string together an eloquent sentence that claims to have the domain collective expertise of several fields that people can only master over a lifetime. He promises much but fails to deliver anything. They have time to appear on countless interview and television skits. Deemed authentic by the masses due to the size of his bank account, even though he was exposed as a fraud continuously for more than a decade.
+
+Or this one: A dude claims he's converted to Islam. From that moment up till years later he constantly posts on social media with Tweets and videos that show the contrary. A constant stream of videos and behavior that not only I need to censor for my young kids, but for myself.
 
 To preface what I will write below with my usage of red flags is that they are not blanket statements to immediately negate someone's authenticity, rather it is a means to be more critical and cautionary in judging someone.
 
