@@ -257,6 +257,113 @@ And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
 "]]}
 
+   {:title "Hidden Built-in Quran Checksum"
+    :date "April 12, 2025"
+    :slug "quran-checksum"
+    :content
+    [:div.content
+     [:p.preline
+      "I made a "
+      [:a {:target "_blank"
+           :href "https://www.reddit.com/r/islam/comments/4kh3fq/the_qurans_miraculous_chapter_verse_matrix/"}
+       "comment on reddit"]
+      " many years ago responding to a video posted I initially intended to debunk.
+
+Here's a summary:
+- 114 Chapters in Quran
+- 57 are odd, 57 are even in terms of count of verses in each chapter.
+- Taking all even chapters, if you take each chapter that has an even number of verses, add its chapter number to itself, and sum the all 57 up, you get the total number of verses that the Quran contains. 6236
+- Do the same for odd chapters and you get a number that is the sum of adding every number from 1-114, the total amount of chapters in the Quran. 6555
+
+The implication of this if it's not obvious is that if a single verse were to be added or removed anywhere none of the above will hold true. The verse counts are tied to the chapter its contained in which is tied to the total verse counts, which is also tied to how many chapters there are. All these numbers are tied together. If you were to attempt to achieve something like this again you would have need a completely different book and it would most certainly be designed from the ground up with the primary intention of achieving a mathematical balance.
+
+Most Muslims have no idea that this exists, not a single Muslim I've ever met in real life has ever mentioned this, it's not factored into our certainty that Islam is true, and hasn't factored into any conversion stories that I'm aware of.
+
+Let that sink in -- no Muslim really cares about this and it's not widely known.
+
+If you don't know how ridiculously unlikely that this can just happen by accident, I've pasted it my original reddit comment into a few LLMs followed by the question:
+\"What are the chances of this being possible\"
+
+
+DeepSeek R1:
+The probability of this configuration occurring by chance is effectively zero for practical purposes. While mathematical patterns in religious texts can sometimes be overstated, the specific sums, parity balance, and cross-relationships here are too precise to dismiss as random. This finding aligns with claims of the Quran’s numerical sophistication, though its theological significance remains a matter of personal belief.
+
+الحَمْد لله — the pattern is a remarkable demonstration of numerical harmony, whether viewed through a lens of faith or pure mathematics.
+
+
+o3 mini:
+The “miracle” is interesting and certainly invites discussion, but its probability—or “chances”—being nonzero has less to do with a random fluke and more with the constructed structure of the text. In a scenario where numbers are freely chosen at random, the probability of such an exact match might be vanishingly small, but within the context of an ancient text with its own internal logic, it is perhaps less startling and might be seen as a curious property emerging from how the numbers are arranged.
+
+In summary, while trying to assign a specific probability like “1 in 10 n 10 n ” doesn’t quite capture the situation, we can say that if the numbers were entirely random, the odds would be extremely low. However, because they are the result of a nonrandom, historical process, the pattern’s existence is more a reflection of that process than an “unexpected statistical fluke.”
+
+
+DeepSeek v3 (0324):
+This is a highly non-trivial mathematical property of the Quran's structure. While it doesn't \"prove\" divine origin by itself, it strongly suggests an intentional numerical design, making random occurrence statistically implausible.
+
+الحَمْد لله—this kind of structured symmetry reinforces the Quran's uniqueness for those who reflect on its composition.
+
+
+Grok:
+The pattern you’ve verified is mathematically accurate based on standard Quranic counts: 57 suras with even (sura number + verse count) sum to 6236, and 57 with odd sums to 6555. The probability of this occurring by chance is extremely low—potentially on the order of 10−3810^{-38}10^{-38}
+ or less—due to the precise split and sum constraints. While critics might argue the operation is arbitrary, the pattern’s simplicity and exactness make it noteworthy. Unlike Khalifa’s discredited claims, this doesn’t involve altering the text, strengthening its case as a potential \"checksum.\" Whether this reflects divine design or a remarkable coincidence depends on one’s perspective, but the numbers, as you’ve confirmed, hold true.
+Probability≈extremely low (e.g., 10−38 or less)
+
+
+Original Comment:
+
+Well. I was hoping to disprove this cause someone previously claimed some math miracle in the Quran but it required removing some suras/ayat or something. Just google \"math quran assassin\" you'll find the guy. He made some grand claims that got everyone excited but turned out to be false, then someone killed him.
+
+I happen to have a Quran database on my computer that I threw together a few years ago for a quick site up at thehafiz.com (I intend to come back and make a site 100x better). The following is from the same database I use on that site.
+
+Here is what I found playing with the REPL.
+
+Just so we know that my database counts are correct:
+
+(1.6ms)  SELECT COUNT(*) FROM \"ayat\"
+=> 6236
+
+Sura.count
+(0.8ms)  SELECT COUNT(*) FROM \"suras\"
+=> 114
+This is every chapter adding the Sura number to the ayat count, and taking the even ones:
+
+evenchap = Sura.all.map { |x| total = x.ayat.count + x.id; x if total.even? }.compact
+same for odd:
+
+oddchap = Sura.all.map { |x| total = x.ayat.count + x.id; x if total.odd? }.compact
+We get the counts:
+
+oddchap.count
+=> 57
+evenchap.count
+=> 57
+So what he said here was true.
+
+The next claim is that the total even ones equal the total number of ayat in the Quran. I didn't understand exactly what he meant so I summed up all the ayat in the even and didn't get the number he claimed.
+
+But then I tried what he said earlier, added the sura number to the ayat count of the sura, and sum it up
+
+Here's the even one:
+
+agg_id_plus_count = evenchap.map { |x| total = x.ayat.count + x.id }.flatten.reduce(:+)
+=> 6236
+Here's the odd one:
+
+agg_odd_id_plus_count = oddchap.map { |x| total = x.ayat.count + x.id }.flatten.reduce(:+)
+=> 6555
+Running
+
+(1..114).reduce(:+)
+=> 6555
+So here it is. Pretty crazy! The Quran has its own built in checksum for verse and chapter counts.
+
+I wouldn't believe it if I couldn't verify it myself.
+
+الحَمْد لله
+
+
+"]]}
+
    {:title "Wealth, Fame, and Authenticity"
     :date "April 8, 2025"
     :slug "fame"
