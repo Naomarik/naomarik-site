@@ -257,6 +257,50 @@ And the distro I chose to stay,
 Linux Mint: While I don't care for cinnamon, i3 on it works well. Timeshift has already been useful for me within a week of using it and gives me confidence to do risky things I know I don't need to spend time fixing. Also ubuntu base means it's close to how I run my servers. Performance is great and resource usage OOB is very low even on cinnamon.
 "]]}
 
+   {:title "The Buzzwords Do Not Matter"
+    :date "May 08, 2025"
+    :slug "buzzwords"
+    :content
+    [:div.content
+     [:p.preline
+      "Peel away at the layers of hype driven buzzwords and what you're left with is a problem and a solution. Buzzwords are extremely effective at masking any real problem that might exist, and even better at concealing what the solution, if any, would be.
+
+Back in 2013 I was heavily advocating for cryptocurrency. I ended up having my entire office buy a combination of bitcoin and dogecoin. I personally managed the funds of several people, taking their money and converting it into crypto with my coinbase account and transferring it into a private wallet which I held until they decided to convert it back. Even though all of the accounts I was managing made profit, had we all held out a bit longer we would have had a more luxurious life.
+
+I was advocating crypto heavily because I read the bitcoin white paper and firmly believed that this was the new best way to transfer money. At some point I had an involuntary and hard to accept epiphany: My mother will never be able to buy milk with bitcoin. Even if she could, what would the interface look like? What would be the most convenient thing she could use?
+
+Swiping or tapping a card. Anything beyond this is completely unnecessary and adds more time to a system that is already at max convenience. So why would she care whether an ACID transaction is happening in a postgresql database or a bunch of GPUs in random locations are maxed out calculating hashes to mine the next block while simultaenously confirming her transaction?
+
+The problem is transferring money, the solution is pulling out your phone or card and tapping.
+
+Even if I were to teach people how to use cryptocurrency and how to make a private wallet it would be absurdly easy for me to rob them if I had physical access to their devices. Nearly everyone I know isn't tech savvy enough to protect their private keys from someone like me.
+
+This creates another problem. If anyone were to fraudulently take $N from someone else, how would they get it back?
+
+With cryptocurrency there's no solution. There's no customer support. It's gone forever.
+
+I'm stating the obvious here: what we should strive for are systems that can adapt the complexities and edge cases of life in the most convenient way possible.
+
+Agree with me? Somehow buzzwords have the power to cause an enormous smokescreen around this statement.
+
+Not too long ago cryptocurrency's value got enormous and everyone knew what bitcoin was. Somehow the word blockchain was mistaken to be the latest magical fairy dust that could solve any tech problem. People who don't know any better conflated the value of bitcoin with the utility of blockchain. Just sprinkle in some blockchain and NOW you can go paperless, it wasn't possible before. All the new innovative things coming that blockchain would now magically solve made it apparent there's a severe lack of comprehension in technology and widespread intellectual dishonesty. The proposed solutions to these problems was always achievable by any of the countless ways computers can store and retrieve data. Any real attempt to shoehorn CRUD apps into a blockchain would be several orders of magnitudes more inefficient and slow than simply using a standard database with 20+ years of service and many millions of man hours concentrated into a singular goal to store and retrieve data as fast and reliably as possible. This is assuming the developers could overcome the nightmare of creating and maintaining these projects in the first place.
+
+Then NFTs became a thing. I would get asked by people about NFTs and my response would be that if you go to the desert and fill a bottle with sand, that has more inherent utility than an NFT. This was my response back when people were flipping them and becoming millionaires, scamming each other. I have no idea how people, in the age where nearly everyone has a device with the knowledge to screenshot or take pictures of anything for free, thought it would be possible that links to pictures would have any real life utility. When they came crashing down in value to nothing and all the random NFT marketplace platforms disappeared, I was not surprised nor did I feel any vindication for my opinions when it was contrary to everyone else.
+
+And now we have something that actually expands greatly on what we are able to do: AI. The issue is that most people do not need to shoehorn AI into the problems they are solving and it's extremely cringe for me to read businesses that are \"Bringing AI to the Blockchain\" with no other discernible problem statement trick people into giving them money.
+
+Everything has its tradeoffs and it takes someone who is able to research and understand the essence of what a technology can do to assess properly whether it is a viable tool to be relied upon to solve a given problem. It would be insane to hire a carpenter and force him to use your freshly sharpened kitchen knives to make your cupboards.
+
+Software is a black box of magic to most people and buzzwords are often used to be intentionally deceptive. Most people will only know the UX part except the people who have built the thing or something similar.
+
+Next time you want to know whether any new startup laden with buzzwords is useful, just ask what problem it solves in real life and what are the steps it takes to use it. If you're not in the industry it's for, your opinion does not matter. If you are in the industry and the new solution is NOT more convenient than what you are currently using while NOT fitting more real life use cases, it's useless.
+
+You don't need to understand the tech behind it, you don't need to understand what the buzzwords truly mean. You only need to understand the user experience.
+
+But hey. I don't have any buzzwords to sell you or wealth to flex, so this entire article has no merit. You should be heeding the words of people who have butlers."
+
+      ]]}
+
    {:title "Hidden Built-in Quran Checksum"
     :date "April 12, 2025"
     :slug "quran-checksum"
@@ -377,15 +421,9 @@ There are countless examples now of people being exposed for their fraud. People
 
 Someone's actions and commitment to be true to their words should determine integrity, not how many millions of followers or dollars they have.
 
-Take this example: A lone person who can hardly string together an eloquent sentence that claims to have the domain collective expertise of several fields that people can only master over a lifetime. He promises much but fails to deliver anything. They have time to appear on countless interview and television skits. Deemed authentic by the masses due to the size of his bank account, even though he was exposed as a fraud continuously for more than a decade.
-
-Or this one: A dude claims he's converted to Islam. From that moment up till years later he constantly posts on social media with Tweets and videos that show the contrary. A constant stream of videos and behavior that not only I need to censor for my young kids, but for myself.
-
-To preface what I will write below with my usage of red flags is that they are not blanket statements to immediately negate someone's authenticity, rather it is a means to be more critical and cautionary in judging someone.
-
 Fame is a huge red flag for me, especially from those who are religious, and especially from those who are Muslims. I've seen over and over again religious leaders being exposed for not practicing what they preach yet still maintain an enormous loyal audience even though the evidence of their misdeeds, misconduct, or even misguidance is on full display to review.
 
-Extreme charisma is also a huge red flag for me and I've learned this the hard way. In video games you boost this stat and you're able to just talk your way into getting whatever you want even if you're not giving something of equal value. Unfortunately the same holds true for real life. You're doing the guy a favor because you like him, yet once he's done with you no favors have been returned and you gradually come to the realization that you've been swindled and incurred a net loss. Charisma will exponentially multiply someone's fame and a person who does not fear Allah will definitely wield their charm to vampirically suck time and value out of their victims.
+Extreme charisma is also a huge red flag for me and I've learned this the hard way. In role playing games you boost this stat and you're able to talk your way into getting whatever you want even if you're not giving something of equal value. Unfortunately the same holds true for real life. You're doing the guy a favor because you like him, yet once he's done with you no favors have been returned and you gradually come to the realization that you've been swindled and incurred a net loss. Charisma can exponentially multiply someone's fame and a person who does not fear Allah will definitely wield their charm to vampirically suck time and value out of their victims.
 
 For the longest time I could never comprehend the hadith about Dajjal will come and countless people will follow him. Muslims will follow him despite having a complete description to make it impossible to mistake him for anyone else, yet somehow people speculate that Dajjal is not a real person but an idealogy or technology. Many people today fall for people far less than impressive than Dajjal who will have all the fame, all the wealth, and all the miracles.
 
@@ -787,7 +825,7 @@ that works on both client side forms and backend."]
   (render
    [:div#verbiage.container.small
     [:h1 "Verbiage"]
-    [:p "Where letters are spewed forth about random topics"]
+    [:p "Where letters are spewed forth about random topics. Primarily Islam, tech, and Clojure. No AI used for anything unless explicitly stated."]
     (into [:div.entries]
           (map (fn [{:keys [title date slug]}]
                  [:div.entry
