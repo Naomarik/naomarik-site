@@ -174,7 +174,9 @@ nav {
   gap: 1px;
   display: grid;
   justify-items: end;
-  grid-template-columns: 1fr repeat(3, min-content);
+  grid-template-columns: 1fr repeat(4, min-content);
+  font-size: 14px;
+  overflow-x: auto;
 
   a {
     text-transform: uppercase;

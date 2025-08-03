@@ -21,6 +21,7 @@
                      :class (when (= page page*) "active")
                      } title])
               [["/" (if (= @env/mode :dev) "/dev" "Home") :home]
+               ["https://quran.naomarik.com" "Quran" :quran]
                ["/projects" "Projects" :projects]
                ["/verbiage" "Verbiage" :verbiage]
                ["/about" "About" :about]])]))
