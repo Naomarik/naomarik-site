@@ -21,6 +21,9 @@
          images {:doc "Build images"
                   :task (shell "./convert.sh")}
 
+         webpimagesize {:doc "Compile webpimagesize binary"
+                        :task (shell "make webpimagesize")}
+
          esbuild {:doc "Build js"
                   :task (shell "npx esbuild js/index.js --bundle --minify --outfile=build/js/index.min.js")}
 
