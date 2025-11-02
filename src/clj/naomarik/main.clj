@@ -79,7 +79,7 @@
 (defn- read-config []
   (if (.exists (io/file "config.edn"))
     (edn/read-string (slurp "config.edn"))
-    {:port 3001}))
+    {:port 3010}))
 
 (defn run [mode]
   (assert (#{:dev :prod} mode))

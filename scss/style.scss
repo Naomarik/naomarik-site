@@ -1,7 +1,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-@import "reset";
+@forward "reset";
 
 :root {
   --gap: 9px;
@@ -22,24 +22,38 @@
 
 }
 
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     --bg: white;
-//     --bg-accent: #F4F9FF;
-//     --bg-highlight: #9FAACE;
+@media (prefers-color-scheme: light) {
+  :root {
+    --fg: #586e75;
+    --fg-alt: #657b83;
+    --fg-muted: #93a1a1;
 
-//     --fg: #272930;
-//     --fg-alt: #2B5164;
-//     --fg-muted: #007F8B;
+    --bg: #fdf6e3;
+    --bg-accent: #eee8d5;
+    --bg-highlight: #268bd2;
 
-//     --shadow: black;
-//   }
-// }
+    --shadow: rgba(0, 0, 0, 0.1);
+    --bg-light: #eee8d5;
+  }
+}
+
+[data-theme="light"] {
+  --fg: #586e75;
+  --fg-alt: #657b83;
+  --fg-muted: #93a1a1;
+
+  --bg: #fdf6e3;
+  --bg-accent: #eee8d5;
+  --bg-highlight: #268bd2;
+
+  --shadow: rgba(0, 0, 0, 0.1);
+  --bg-light: #eee8d5;
+}
 
 
-// html {
-//   color-scheme: dark light;
-// }
+html {
+  color-scheme: dark light;
+}
 
 p {
   line-height: 1.3;
