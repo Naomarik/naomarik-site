@@ -2,9 +2,9 @@ CC = gcc
 CFLAGS = -O2 -Wall -Wextra
 
 webpimagesize: webpimagesize.c
-	$(CC) $(CFLAGS) -o webpimagesize webpimagesize.c
+	$(CC) $(CFLAGS) -o bin/webpimagesize webpimagesize.c
 
 clean:
-	rm -f webpimagesize
+	rm -f bin/webpimagesize
 
 .PHONY: clean

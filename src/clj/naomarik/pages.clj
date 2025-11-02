@@ -8,7 +8,7 @@
 
 (defn -image-dims [path]
   (let [path (format "resources/build/%s" path)]
-    (edn/read-string (:out (sh/sh "./webpimagesize" path)))))
+    (edn/read-string (:out (sh/sh "bin/webpimagesize" path)))))
 
 (def image-dims (memoize -image-dims))
 

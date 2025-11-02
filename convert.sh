@@ -22,7 +22,7 @@ find "$INPUT_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png'
 
   echo "Converting $relative_dir/$filename"
   # Convert the image to WebP format and save it in the output directory
-  cwebp -q 80 "$file" -o "$OUTPUT_DIR/$relative_dir/$base.webp"
+  bin/cwebp -q 80 "$file" -o "$OUTPUT_DIR/$relative_dir/$base.webp"
 done
 
 echo "Input"

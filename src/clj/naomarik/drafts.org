@@ -1,0 +1,78 @@
+#+title: Drafts
+
+* Identity
+I've noticed when people grow up and become obsessive about something, sometimes they are escaping something that traumatized them growing up. A cliche is the story of a successful entrepreneur who has worked exceptionally hard his way out of poverty. Another example are Youtubers Kitboga and CoffeeZilla, who have had family that were scammed so they became obsessed with exposing scammers.
+
+It's like a rubberband stretching far into one direction the person hates, then when a block is lifted that allows the person to finally act freely to solve their problems, it shoots off propelling itself into the opposite, disproportionately travelling into the opposite direction far further than it was originally stretched.
+
+I grew up with a single mother working fulltime. She did her best and provided well for my sister and myself, being part of middle class America. That also meant she wasn't around much to take care of us and that was left to daycares and babysitters. I spent an enormous amount of time growing up in situations I did not want to be in because I had no control over my environment. I always wanted to flee as fast as possible to the comfort of home to play video games.
+
+Lately I've been doing some introspecting, trying to understand my motivations so I can manipulate myself to work harder and learn more. I think what I value most is autonomy over my life.
+
+
+
+
+
+* Accomplishing Things
+I used to value speed over all else, but as I've become older, I've realized hitting a target faster doesn't necessarily lead to the bullseye. I now value plans and correctness more than raw execution speed because over time it leads to faster execution.
+
+Discipline <-> Pleasure, also Discipline -> Pleasure. Both a tug relationship and a push relationship where discipline can lead to pleasure. Enjoying discreet moments of life, cashing out on
+Exerting will over someone.
+{:craziness-level ;; is someone willing to shoot you through their own foot, or in tekken yoshimitsu's attack where he stabs you through himself}
+
+:
+{:task
+{:goal ;; may not be to complete entire thing
+ :method ;; actual work being done
+}
+:plan
+:reward {}
+:motivation
+{
+:failure-consequences
+:life-purpose
+:what-this-provides
+:long-term-reward
+}
+:distractions {:internal #{:stress :upcoming-interruptions} :external }
+:engagement/working-on-task ;; whittle away at ability to execute
+{:task-fatigue
+:flow ;; execution momentum
+:mana ;; ?
+}
+:skill ;; modifies engagement, multiplier to frustration/task fatigue and flow. bell curve, strike a balance. too easy and too hard is negative
+:discipline ;; defense against distractions https://www.youtube.com/watch?v=0kIoZi3yxYk
+}
+;; apply this to real tasks and games
+
+
+;; mental state
+{:burnout {:short-term :long-term}
+:energy ,
+:discomfort
+
+}
+
+;; self-alignment
+{:ethics {:religious
+:culturual
+:self}}
+
+;; within
+{:perceived-importance
+:in-practice}
+
+
+Something about entertainment, movies, comedy, games to refill/reduce burnout.
+Something in here about being stubbornly stuck to a problem. maybe failure-consequence, with self inclination of not allowing a problem to win.
+
+Working on something you don't believe in can decrease an attribute adding to your burnout
+
+* Observing users use your app
+Spending time getting things right or face rewrites. Users screw things up.
+
+UX is extremely hard. There's an explosion of choice when it comes to text, where to place a button, how much to show, what inputs to show when.
+
+A wrong decision can lead to a percentage of drop outs during sign up.
+
+You can be blinded by the decisions you make because you know how things work.
