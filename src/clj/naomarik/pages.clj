@@ -726,7 +726,7 @@ that works on both client side forms and backend."]
     [:h1 "Naomarik aka Omar Hughes "]
     [:div
      [:div
-      [:p "This is where you can find up to date information on my projects and writings."]
+      [:p "This is where you can find up to date information on my projects, thoughts about things I'm willing to post publicly, and the Quran with various tafsir and translations."]
       [:p "Get in contact: "
        [:a.btn {:href "mailto:omar@naomarik.com"} "omar@naomarik.com"]]]
      [:div
