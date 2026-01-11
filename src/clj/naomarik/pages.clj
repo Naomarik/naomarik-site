@@ -136,7 +136,77 @@
     :req req}))
 
 (def writing
-  [{:title "The Buzzwords Do Not Matter"
+  [{:title "The way I produce software has dramatically changed"
+    :date "Jan 11, 2026"
+    :slug "shift-in-work"
+    :content
+    [:div.content
+     [:p.preline
+      "The following are just some random thoughts documenting my progress with using AI in practice.
+
+So be warned I haven't cared to proofread or adjust the structure for readability.
+
+Claude Code's interface felt has always felt clumsy, like filling out a commentbox card dropping it in and hoping for a good outcome, kind of in a slot machine type of way.
+I coded the entirety of my quran application with it on 3.7 and I had to babysit the entire thing, and the times I got lazy and just blindly accepted changes were regretful due to the tech debt I had to clean up.
+
+It took me a week, and while producing it, I felt that I could probably just code this faster myself with how many times I was interrupting it. Also the mode of thought I went in did not feel very engaging.
+It was painful as well, seeing only a few sentences of context on what it's currently doing with the option to expand it and see more which is also barely legible.
+
+Not too long ago I started using Opencode, and I didn't know I needed it until I started using it more and more often. Learning how to use it effectively gave me leverage in what I can produce that I did not know was possible.
+The observability it gives you over what the LLM is doing is immense, and as a result I was able to adjust myself in learning how to use it effective.
+I noticed it started doing things in the background in what they referred to as a 'subagent', the UX explicit about what it was doing and keybinding.
+
+The context window top and center in the nav bar gave me an extremely clear idea of how to use it properly and when I should clear context or compact and try something else. After a certain percentage of context usage, it stops caring as much aout the initial prompt it received from AGENTS.md.
+It also can sometimes go down bad paths and perpetuate this loop.
+
+I inferred pretty quickly that it was just spawning a new LLM chat with its own prompt then returning a summary to the main chat. Then it naturally it occurred I can just start explicitly asking it to do things in subagents. Then I realized it can do many things in these subagents in parallel. Opencode makes it extremely easy to see all this and what's going on with them.
+
+Awhile back when making a RAG search for sayartii, I saw what data actually gets sent to the AI and that demystified a lot of things to me as well, so I was already aware of a system prompt and an array of chats back and forth between the AI and the user.
+
+Each model has its own 'vibe' or personality and strengths and weaknesses. You get to know what's good for what by using them over time and start to switch models when you know one will do something better than the other due to its inclinations.
+
+When Opus 4.5 dropped, this was an extreme gamechanger for me. I noticed that instead of getting what I wanted out of it about 70% of the time, Opus 4.5 was around 90% in alignment with what I wanted to produce myself.
+
+This was the defining moment where I was no longer in emacs coding things myself and using AI to save time here and there, instead I was just prompting Opus 4.5 to do things in Opencode, observing what it did and using magit to check diffs to ensure it did the right thing and QAing what was produced.
+
+Each time the AI did something I did not like, I would adjust my AGENTS.md. Also knowing that this file gets injected as the first thing into each conversation, I made a table of contents of other things I wanted it to look up automatically for specific tasks, long before Opencode adopted the skills format that Claude had.
+
+I still don't use skills in my personal projects because those context files are too important to hide in a .folder and I consider them first class in me being able to provide the LLM with context it needs for things. I've had a few projects going in in parallel, then I decided to make a wrapper project that can provide all the infrastructure to my other projects and sync changes to them all at the same time with ai docs, library code.
+
+The week right before new years, Anthropic gave 2x usage to everyone and I built harder than ever, achieving a velocity I've never hit before. Then Jan 1 hit and I spent one day fighting with Opus 4.5. The entire day I was not able to produce a single useful thing with it. I adjusted my agents.md several times to no avail. Then I made a simple prompt that I've seen it do at least a 100x.
+
+'Spawn a test repl and connect to it' it failed to follow these clear instructions. I'm fairly confident I got A/B tested by some model or this was Anthropic's method of reducing my usage by effectively making their model useless.
+
+When I saw that, I switched to Sonnet 4.5 which I hadn't used since Opus came out and it immediately followed all my instructions and got what I want done in one prompt. The frustration though burnt me out for the following day and I was reminded of why, prior to Opencode and Opus 4.5, why it was faster to just code things myself and only use AI here and there for specific tasks.
+
+Over time I developed a 'workflow' where I can create a specification for a major feature I want done. I tend to drop into planning mode to do this, hash things out with the LLM a few times to ensure it has no questions or ambiguity of what my intentions are, and then it goes through a series of steps where it does experiments, makes a plan, then makes an orchestrator and tasks.
+Each step of producing these context files, I've had it automatically tell me to clear the context window and provide me with the next prompt so I can just copy and paste that in. This is immensely helpful with 5 projects being worked on in parallel.
+
+This has been extremely powerful for me, and certain tasks can take an hour to make. This isn't a ralph wiggums scenario either, this is doing exactly what I told it to.
+
+I haven't followed anyone's advice or templates either, I'm just instructing the LLM to build things as I would. In a way it feels being able to encode my personal DNA of building things and watching it turn into something tangible.
+
+I now feel that I'm at a point where the LLM is at nearly 99% alignment with me, and I am extremely confident that if I give it a prompt, I know what to expect. With the exception of Anthropic 100% giving me a lobotomized Opus for a day, I am never surprised anymore with what I'm getting out of both Sonnet 4.5 and Opus 4.5.
+
+I've learned when to clear the chat, when to compact, and when even as the context window starts reaching its limit, whether it is more beneficial to keep moving vs clearing.
+
+I'm using Omarchy, Hyprland with hy3 and added some custom keybindings to name my workspace and rearrange them. This has been incredibly helpful for me to know what project is doing what. This is probably the most optimal setup I can produce. Arch is extremely lightweight and when I have many things going on at once, a lot of RAM is consumed.
+
+I now have a lot more to learn. Fine tuning models, figuring out how to flow data from smaller specialized models to produce things, setting up a testing framework to assess the strengths and weaknesses of models according to a specific business use cases. I've been writing webapps for a long time and the problem space I could solve was constrained to the algorithms I knew how to produce to follow deterministic flows.
+
+I've always hated building things that have hard dependencies on existing companies. Over the 15 years of building webapps, I've seen that you can never rely on any one company so everything I make has zero vendor lock in with regards to depending on infrastructure that can be rugpulled on me. So while AI API usage has been useful for certain applications for quite awhile that was not very exciting for me.
+
+I can see a path forward now where I can cheaply do things on fully locally with specialized fine tuned small models working in tandem to figure out whatever I need them to do based on fuzzy inputs.
+
+In my opinion the strongest engineers are going to be able to know how to flow these together to produce the best results given a particular business use case. Knowing what model/s to use, when to fine tune them, how to do so, making them observable in production.
+
+
+
+Inshallah I should have some stuff coming out soon. I allowed scope creep on my current projects to explode to be able to fine tune my workflows and prompts.
+
+I also recognize this is an extremely privileged position to be in, and anyone who cannot currently afford these latest models to use heavily is at a severe disadvantage."]]}
+
+   {:title "The Buzzwords Do Not Matter"
     :date "May 08, 2025"
     :slug "buzzwords"
     :content
