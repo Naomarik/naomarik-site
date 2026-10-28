@@ -824,7 +824,7 @@ that works on both client side forms and backend."]
         :link "https://sova.naomarik.com"
         :page
         [:div#sova
-         [:p "Actively developing. Sova is a web app for the pi coding agent that runs on your own machine. It lists every agent session, opens any transcript, and live-watches sessions that are still running in a terminal. A web chat can hand work to worker agents and you can follow each one in its own pane. Before anything gets built, the agent can set out what it found, the approach it wants and its open questions, and wait for your decisions. Every change reads back as numbered steps, each with the reason it was made. It works on a phone too, foldables included, and sends a push when a session needs you. Open source under Apache-2.0."]
+         [:p "Actively developing. Sova is a web app for the pi coding agent that runs on your own machine. Its whole point is making it easy to run tons of sessions at once: every session sits in one list that shows which ones need you, and any of them is a click away. A chat can hand work to worker agents and you can follow each one in its own pane. Every change reads back as numbered steps, each with the reason it was made. It works on a phone too, foldables included, and sends a push when a session needs you. Open source under Apache-2.0."]
          [:p [:a {:href "https://sova.naomarik.com" :target "_blank"} "Watch it run"]
           " · "
           [:a {:href "https://github.com/Naomarik/sova" :target "_blank"} "GitHub"]]
