@@ -815,7 +815,47 @@ that works on both client side forms and backend."]
 (def all-projects
   (let [project-img (fn [id img]
                       (format "/img/projects/%s/%s.webp" id img))]
-    [(let [img (partial project-img "motorsaif") ]
+    [(let [img (partial project-img "sova")]
+       {:id "sova"
+        :title "Sova"
+        :tags ["TypeScript" "SolidJS" "Bun" "Open Source"]
+        :desc "A browser workspace for the pi coding agent: every session in one place, workers you can follow, on desktop or phone."
+        :thumb (img "hero-desk")
+        :link "https://sova.naomarik.com"
+        :page
+        [:div#sova
+         [:p "Actively developing. Sova is a web app for the pi coding agent that runs on your own machine. It lists every agent session, opens any transcript, and live-watches sessions that are still running in a terminal. A web chat can hand work to worker agents and you can follow each one in its own pane. Before anything gets built, the agent can set out what it found, the approach it wants and its open questions, and wait for your decisions. Every change reads back as numbered steps, each with the reason it was made. It works on a phone too, foldables included, and sends a push when a session needs you. Open source under Apache-2.0."]
+         [:p [:a {:href "https://sova.naomarik.com" :target "_blank"} "Watch it run"]
+          " · "
+          [:a {:href "https://github.com/Naomarik/sova" :target "_blank"} "GitHub"]]
+         (img-with-caption
+          {:src (img "hero-desk")
+           :caption "The sessions sidebar, a session in Delegate mode waiting on its 3 workers, each on its own model, and the working worker's transcript"})
+         [:section.grid
+          (img-with-caption
+           {:src (img "delegate")
+            :caption "The Agents tab: each worker with its provider, model, tokens and state, beside the working worker's transcript"})
+          (img-with-caption
+           {:src (img "alignment")
+            :caption "An alignment card: what the agent found, its approach, a rejected alternative and an open question with a recommendation"})
+          (img-with-caption
+           {:src (img "changes")
+            :caption "The changes viewer: numbered steps, one per worker, each with why it was made, and its diff"})
+          (img-with-caption
+           {:src (img "transcript")
+            :caption "A running turn: reads, edits, a test run, and a follow-up typed into the Steer composer"})
+          (img-with-caption
+           {:src (img "overseer")
+            :caption "The Overseer lists finished sessions, each with why, and asks before archiving them"})]
+         [:section.grid.col-2
+          (img-with-caption
+           {:src (img "hero-phone")
+            :caption "The same session on a phone, its alignment decided and its workers running"})
+          (img-with-caption
+           {:src (img "phone-question")
+            :caption "A session on a phone, waiting on an open question with a recommendation"})]]})
+
+     (let [img (partial project-img "motorsaif") ]
        {:id "motorsaif"
         :title "MotorSaif"
         :tags ["Clojure" "Datomic" "PWA" "LIVE"]
